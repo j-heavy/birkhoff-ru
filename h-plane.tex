@@ -1,0 +1,651 @@
+\chapter{Geometry of the h-plane}\label{chap:h-plane}
+\addtocontents{toc}{\protect\begin{quote}}
+
+In this chapter, we study the geometry of the plane described by the conformal disc model.
+For briefness, this plane will be called the {}\emph{h-plane}.
+
+We can work with this model directly from inside of the Euclidean plane. 
+We may also use the axioms of neutral geometry since they all hold in the h-plane; the latter proved in the previous chapter.
+
+\section*{Angle of parallelism}
+\addtocontents{toc}{Angle of parallelism.}
+
+Let $P$ be a point off an h-line~$\ell$. 
+Drop a perpendicular $(PQ)_h$ from $P$ to $\ell$;
+let $Q$ be its foot point.
+Let $\phi$ be the smallest value such that the h-line $(PZ)_h$ with $|\measuredangle_h Q P Z|=\phi$ does not intersect~$\ell$.
+
+The value $\phi$ is called the \index{angle!angle of parallelism}\emph{angle of parallelism} of $P$ to~$\ell$.
+Clearly, $\phi$ depends only on the h-distance $s=PQ_h$.
+Further, $\phi(s)\to \pi/2$ as $s\to 0$, 
+and $\phi(s)\to0$ as $s\to\infty$.
+(In the Euclidean geometry, the angle of parallelism is identically equal to~$\pi/2$.)
+
+\begin{wrapfigure}{o}{34mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-206}
+\end{wrapfigure}
+
+If $\ell$, $P$, and $Z$ are as above, then the h-line $m=(PZ)_h$ is called \index{asymptotically parallel lines}\emph{asymptotically parallel} to~$\ell$.
+In other words, two h-lines are asymptotically parallel if they share one ideal point.
+(In hyperbolic geometry, the term {}\emph{parallel lines} is often used for \index{asymptotically parallel lines}\emph{asymptotically parallel lines}; we do not follow this convention.)
+
+Given $P\not\in\ell$, there are exactly two asymptotically parallel lines thru $P$ to $\ell$; 
+the remaining parallel lines are called \index{parallel lines!ultra parallel lines}\emph{ultra parallel}.
+
+
+On the diagram, the two solid h-lines passing thru $P$ are asymptotically parallel to~$\ell$;
+the dashed h-line is ultra parallel to~$\ell$.
+
+
+
+
+
+
+
+
+\begin{thm}{Proposition}\label{prop:angle-parallelism}
+Let $Q$ be the foot point of $P$ on h-line~$\ell$.
+Then
+$$PQ_h=\tfrac12\cdot\ln \tfrac{1+\cos\phi}{1-\cos\phi},$$
+where $\phi$ is the angle of parallelism of $P$ to~$\ell$.
+
+\end{thm}
+
+\begin{wrapfigure}{o}{50mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-208}
+\end{wrapfigure}
+
+
+\parit{Proof.} Applying a motion of the h-plane if necessary,
+we may assume $P$ is the center of the absolute.
+Then the h-lines thru $P$ are the intersections of Euclidean lines with the h-plane.
+
+Let $A$ and $B$ denote the ideal points of~$\ell$.
+Without loss of generality, we may assume that $\angle APB$ 
+is positive.
+In this case 
+$$\phi=\measuredangle QPB=\measuredangle APQ=\tfrac12 \cdot\measuredangle APB.$$
+
+Let $Z$ be the center of the circle $\Gamma$ containing the h-line~$\ell$.
+Set $X$ to be the point of intersection of the Euclidean segment $[AB]$ and the line~$(PQ)$.
+
+Note that, $PX=\cos\phi$.
+Therefore, by Lemma~\ref{lem:O-h-dist},
+$$PX_h=\ln \tfrac{1+\cos\phi}{1-\cos\phi}.$$
+
+Note that both angles $PBZ$ and $BXZ$ are right.
+Since the angle $PZB$ is shared, $\triangle ZBX\sim \triangle ZPB$.
+In particular, 
+$$ZX\cdot ZP=ZB^2;$$
+that is, $X$ is the inverse of $P$ in~$\Gamma$.
+
+The inversion in $\Gamma$ is the reflection of the h-plane across~$\ell$. 
+Therefore
+\begin{align*}
+PQ_h&=QX_h=
+\\
+&=\tfrac12\cdot PX_h=
+\\
+&=\tfrac12\cdot\ln \tfrac{1+\cos\phi}{1-\cos\phi}.
+\end{align*}
+\qedsf
+
+\begin{thm}{Corollary}\label{cor:angle-parallelism}
+Let $ABC$ be an h-triangle and $\beta\z=|\measuredangle_h ABC|$.
+Then the h-distance from $B$ to $(AC)_h$ is less than
+\[\tfrac12\cdot\ln \frac{1+\cos\tfrac\beta2}{1-\cos\tfrac\beta2}.\]
+
+\end{thm}
+
+\parit{Proof.}
+Let $\phi$ denotes the angle of parallelism of $B$ to~$(AC)_h$.
+Note that $\phi>\tfrac\beta2$; therefore 
+\[
+\tfrac12\cdot\ln \frac{1+\cos\phi}{1-\cos\phi}
+<
+\tfrac12\cdot\ln \frac{1+\cos\frac\beta2}{1-\cos\frac\beta2}.\]
+It remains to apply Proposition~\ref{prop:angle-parallelism}.
+\qeds
+
+
+\begin{thm}{Exercise}\label{ex:small-angle}
+Let $ABC$ be an equilateral h-triangle with side $100$.
+Show that 
+\[|\measuredangle_h ABC|<\frac1{10\,000\,000\,000}.\]
+\end{thm}
+
+\section*{Inradius of h-triangle}
+\addtocontents{toc}{Inradius of triangle.}
+
+\begin{thm}{Theorem}\label{thm:h-inradius}
+The inradius of any h-triangle 
+is less than $\tfrac12\cdot\ln3$.
+\end{thm}
+
+\parit{Proof.}
+Let $I$ and $r$ be the h-incenter and h-inradius of $\triangle_hXYZ$.
+
+Note that the h-angles 
+$XIY$, 
+$YIZ$ and 
+$ZIX$
+have the same sign.
+Without loss of generality, we can assume that all of them are positive
+and therefore
+\[\measuredangle_hXIY+ 
+\measuredangle_hYIZ+ 
+\measuredangle_hZIX=2\cdot\pi
+\]
+
+{
+
+\begin{wrapfigure}{o}{44mm}
+\centering
+\includegraphics{mppics/pic-210}
+\end{wrapfigure}
+
+We can assume that
+$\measuredangle_hXIY\ge\tfrac23\cdot\pi$;
+if not relabel $X$, $Y$, and $Z$. 
+
+Since $r$ is the h-distance from $I$ to $(XY)_h$,
+Corollary~\ref{cor:angle-parallelism} implies that
+\begin{align*}r&<\tfrac12\cdot\ln \tfrac{1+\cos\frac\pi3}{1-\cos\frac\pi3}=
+\\
+&=\tfrac12\cdot\ln\frac{1+\tfrac12}{1-\tfrac12}=
+\\
+&=\tfrac12\cdot\ln 3.
+\end{align*}
+\qedsf
+
+}
+
+\begin{thm}{Exercise}\label{ex:side-sup}
+Let $\square_h ABCD$ be a quadrangle in the h-plane 
+such that the h-angles at $A$, $B$, and $C$ are right and $AB_h=BC_h$.
+Find the optimal upper bound for~$AB_h$.
+\end{thm}
+
+
+\section*{Circles, horocycles, and equidistants}
+\addtocontents{toc}{Circles, horocycles, and equidistants.}
+
+Note that according to Lemma~\ref{lem:h-circle=circle},
+any h-circle is a Euclidean circle that lies completely in the h-plane.
+Further, any h-line is an intersection of the h-plane with the circle 
+perpendicular to the absolute.
+
+In this section we will describe the 
+h-geometric meaning of the intersections 
+of the other circles with the h-plane.
+
+You will see that all these intersections have a {}\emph{perfectly round shape} in the h-plane.
+
+One may think of these curves as trajectories of a car with a fixed position of the steering wheel.
+
+In the Euclidean plane, 
+this way you either run along a circle or along a line.
+
+In the hyperbolic plane, the picture is different.
+If you turn the steering wheel to the far right, you will run along a circle.
+If you turn it less, at a certain position of the wheel, you will never come back to the same point, but the path will be different from the line.
+If you turn the wheel further a bit, you start to run along a path that stays at some fixed distance from an h-line.
+
+\parbf{Equidistants of h-lines.}
+Consider the h-plane with the absolute~$\Omega$.
+Assume a circle $\Gamma$ intersects $\Omega$ in two distinct points, $A$ and~$B$. 
+Let $g$ denotes the intersection of $\Gamma$ with the h-plane.
+
+\begin{wrapfigure}{o}{46mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-212}
+\end{wrapfigure}
+
+Let us draw an h-line $m$ with the ideal points $A$ and~$B$.
+According to Exercise~\ref{ex:ideal-line-unique}, $m$ is uniquely defined.
+
+Consider any h-line $\ell$ perpendicular to~$m$;
+let $\Delta$ be the circle containing~$\ell$.
+
+Note that $\Delta\perp \Gamma$.
+Indeed,
+according to Corollary~\ref{cor:perp-inverse-clines}, $m$ and $\Omega$ invert to themselves in~$\Delta$.
+It follows that $A$ is the inverse of $B$ in~$\Delta$.
+Finally, by Corollary~\ref{cor:perp-inverse}, we get that $\Delta\perp \Gamma$.
+
+Therefore, inversion in $\Delta$ sends both $m$ and $g$ to themselves.
+For any two points $P',P\in g$ there is a choice of $\ell$ and $\Delta$ as above such that
+$P'$ is the invese of $P$ in $\Delta$.
+By the main observation (\ref{thm:main-observ}) the inversion in $\Delta$ is a motion of the h-plane. Therefore, all points of $g$ lie on the same distance from~$m$.
+
+In other words, $g$ is the set of points that lie on a fixed h-distance and on the same side of~$m$.
+
+
+Such a curve $g$ is called 
+\index{equidistant}\emph{equidistant} to h-line~$m$.
+In Euclidean geometry, the equidistant from a line is a line;
+apparently in hyperbolic geometry the picture is different.
+
+{
+
+\begin{wrapfigure}{r}{33mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-214}
+\end{wrapfigure}
+
+\parbf{Horocycles.}
+If the circle $\Gamma$ touches the absolute from inside at one point $A$, then the complement $h=\Gamma\backslash\{A\}$ lies in the h-plane.
+This set is called a \index{horocycle}\emph{horocycle}.
+It also has a perfectly round shape in the sense described above.
+
+
+Horocycles are the border case between circles and equidistants to h-lines.
+A horocycle might be considered as a limit of circles 
+thru a fixed point
+with the centers running to infinity along a line.
+The same horocycle is a limit of equidistants thru a fixed point to sequence of h-lines that runs to infinity.
+
+\begin{thm}{Exercise}\label{ex:right-trig-horocycle}
+Find the leg of an isosceles right h-triangle inscribed in a horocycle.
+\end{thm}
+
+
+}
+
+\section*{Hyperbolic triangles}
+\addtocontents{toc}{Hyperbolic triangles.}
+
+\begin{thm}{Theorem}\label{thm:3sum-h}
+Any nondegenerate hyperbolic triangle has a positive defect.
+\end{thm}
+
+
+\begin{wrapfigure}{o}{35mm}
+\centering
+\includegraphics{mppics/pic-216}
+\end{wrapfigure}
+
+\parit{Proof.}
+Fix an h-triangle $ABC$.
+According to Theorem~\ref{thm:3sum-a},
+$$\defect(\triangle_hABC)\ge 0.\eqlbl{eq:defect<0}$$
+It remains to show that in the case of equality, $\triangle_hABC$ degenerates.
+
+Without loss of generality, we may assume that $A$ is the center of the absolute;
+in this case 
+$\measuredangle_h CAB\z=\measuredangle CAB$.
+Yet we may assume that 
+$$\measuredangle_h CAB,
+\quad 
+\measuredangle_h ABC,
+\quad
+\measuredangle_h BCA,
+\quad
+\measuredangle ABC,
+\quad
+\measuredangle BCA\ge 0.$$
+
+Let $D$ be an arbitrary point in $[CB]_h$ distinct from $B$ and~$C$.
+From Proposition~\ref{prop:arc(angle=tan)}, we have
+$$\measuredangle ABC-\measuredangle_h ABC \equiv 
+\pi-\measuredangle CDB
+\equiv \measuredangle BCA-\measuredangle_h BCA.$$
+
+From Exercise~\ref{ex:|3sum|}, we get that
+$$\defect(\triangle_hABC)=2\cdot(\pi-\measuredangle CDB).$$
+Therefore, if we have equality in \ref{eq:defect<0}, then $\measuredangle CDB=\pi$.
+In particular, the h-segment $[BC]_h$ coincides with the Euclidean segment~$[BC]$.
+By Exercise~\ref{ex:line/h-line},
+the latter can happen only if the h-line $(BC)_h$ passes thru the center of the absolute ($A$);
+that is, if $\triangle_hABC$ degenerates.
+\qeds
+
+The following theorem states, in particular, that nondegenerate hyperbolic triangles are congruent if their corresponding angles are equal.
+In particular, in hyperbolic geometry, similar triangles have to be congruent.
+
+{\sloppy 
+\begin{thm}{AAA congruence condition}\label{thm:AAA}\index{AAA congruence condition}
+Two nondegenerate h-triangles
+ $ABC$ and $A'B'C'$
+ are congruent if
+$\measuredangle_hABC\z=\pm\measuredangle_hA'B'C'$,
+$\measuredangle_hBCA\z=\pm\measuredangle_hB'C'A'$
+and 
+$\measuredangle_hCAB=\pm\measuredangle_hC'A'B'$.
+\end{thm}
+
+}
+
+\parit{Proof.}
+Note that if $AB_h=A'B'_h$, then the theorem follows from ASA.
+
+\begin{wrapfigure}{o}{32mm}
+\centering
+\includegraphics{mppics/pic-218}
+\end{wrapfigure}
+
+Assume the contrary. 
+Without loss of generality, we may assume that $AB_h<A'B'_h$.
+Therefore, we can choose the point $B''\in [A'B']_h$ such that $A'B''_h=AB_h$.
+
+Choose an h-half-line $[B''X)$ so that 
+\[\measuredangle_h A'B''X=\measuredangle_h A'B'C'.\]
+According to Exercise~\ref{ex:parallel-abs}, $(B''X)_h\parallel(B'C')_h$.
+
+By Pasch's theorem (\ref{thm:pasch}), $(B''X)_h$ intersects~$[A'C']_h$.
+Let $C''$ denotes the point of intersection.
+
+According to ASA, $\triangle_h ABC\cong\triangle_h A'B''C''$;
+in particular, 
+$$\defect(\triangle_h ABC)=\defect(\triangle_h A'B''C'').
+\eqlbl{eq:defect=defect}$$
+
+Applying Exercise~\ref{ex:defect} twice, we get that
+$$\begin{aligned}
+\defect(\triangle_h A'B'C')
+&=
+\defect(\triangle_h A'B''C'')
++
+\\
+&+\defect(\triangle_h B''C''C')+\defect(\triangle_h B''C'B').
+\end{aligned}
+\eqlbl{eq:defect+defect}$$
+By Theorem~\ref{thm:3sum-h}, all the defects have to be positive.
+Therefore
+$$\defect(\triangle_h A'B'C')
+>\defect(\triangle_h ABC).$$
+On the other hand,
+$$\begin{aligned}
+\defect(\triangle_h A'B'C')
+&= |\measuredangle_hA'B'C'|+|\measuredangle_hB'C'A'|+|\measuredangle_hC'A'B'|=
+\\
+&=|\measuredangle_hABC|+|\measuredangle_hBCA|+|\measuredangle_hCAB|=
+\\
+&=\defect(\triangle_h ABC)
+ \end{aligned}$$
+--- a contradiction.
+\qeds
+
+Recall that a bijection from a h-plane to itself is called \index{angle preserving transformation}\emph{angle preserving} if 
+\[\measuredangle_h ABC= \measuredangle_h A'B'C'\]
+for any $\triangle_h ABC$ and its image $\triangle_h A'B'C'$.
+
+\begin{thm}{Exercise}\label{ex:angle-preserving-hyp}
+Show that any angle-preserving transformation of the h-plane is a motion.
+\end{thm}
+
+\section*{Conformal interpretation}
+\addtocontents{toc}{Conformal interpretation.}
+
+Let us give another interpretation of the h-distance.
+
+\begin{thm}{Lemma}\label{lem:conformal}
+Consider the h-plane with the unit circle centered at~$O$ as the absolute.
+Fix a point $P$ and let $Q$ be another point in the h-plane.
+Set $x=PQ$ and $y=PQ_h$.
+Then
+$$\lim_{x\to 0}\frac{y}{x}=\frac{2}{1-OP^2}.$$
+
+\end{thm}
+
+The above formula tells us that the h-distance from $P$ to a nearby point $Q$ is almost proportional to the Euclidean distance
+with the coefficient $\tfrac{2}{1-OP^2}$. 
+The value $\lambda(P)=\tfrac{2}{1-OP^2}$ is called the \index{conformal factor}\emph{conformal factor} of the h-metric.
+
+The value $\tfrac1{\lambda(P)}=\tfrac12\cdot(1-OP^2)$
+can be interpreted as the {}\emph{speed limit} at the given point~$P$. 
+In this case the h-distance is the minimal time needed to travel from one point of the h-plane to another point.
+
+\begin{wrapfigure}{o}{40mm}
+\centering
+\includegraphics{mppics/pic-220}
+\end{wrapfigure}
+
+\parit{Proof.}
+If $P=O$, then according to Lemma~\ref{lem:O-h-dist}
+$$\frac{y}{x}=\frac{\ln \tfrac{1+x}{1-x}}{x}\to 2\eqlbl{eq:O=P}$$
+as $x\to0$.
+
+If $P\ne O$, let $Z$ denotes the inverse of $P$ in the absolute.
+Let $\Gamma$ denotes the circle with the center $Z$ 
+perpendicular to the absolute.
+
+According to the main observation (\ref{thm:main-observ}) and Lemma~\ref{lem:P-->O}, 
+the inversion in $\Gamma$ is a motion of the h-plane which sends $P$ to~$O$.
+In particular, if $Q'$ denotes the inverse of $Q$ in $\Gamma$, then $OQ'_h=PQ_h$.
+
+Set $x'=OQ'$.
+According to Lemma~\ref{lem:inversion-sim},
+$$\frac{x'}{x}=\frac{OZ}{ZQ}.$$
+Since $Z$ is the inverse of $P$ in the absolute, we have that $PO\cdot OZ=1$.
+Therefore, 
+$$\frac{x'}{x}\to \frac{OZ}{ZP}=\frac{1}{1-OP^2}$$
+as $x\to 0$.
+
+According to \ref{eq:O=P}, $\frac{y}{x'}\to 2$ as $x'\to 0$.
+Therefore
+$$\frac{y}{x}=\frac{y}{x'}\cdot \frac{x'}{x}\to \frac{2}{1-OP^2}$$
+as $x\to 0$.\qeds
+
+Here is an application of the lemma above.
+
+\begin{thm}{Proposition}\label{prop:circum}
+The circumference of an h-circle of the h-radius $r$ is 
+$$2\cdot\pi\cdot\sinh r,$$
+where \index{sh@$\sinh$}$\sinh r$ denotes the \index{hyperbolic sine}\emph{hyperbolic sine} of $r$;
+that is,
+$$\sinh r\df \frac{e^r-e^{-r}}{2}.$$
+
+\end{thm}
+
+
+
+Before we proceed with the proof, let us discuss the same problem in the Euclidean plane.
+
+The circumference of a circle in the Euclidean plane
+can be defined as the limit of perimeters of regular $n$-gons inscribed in the circle as $n\to \infty$.
+
+
+
+Namely, let us fix $r>0$.
+Given a positive integer $n$, consider $\triangle AOB$
+such that
+$\measuredangle AOB=\tfrac{2\cdot\pi}{n}$ and $OA=OB=r$.
+Set $x_n=AB$.
+Note that $x_n$ is the side of a regular $n$-gon inscribed in the circle of radius $r$. 
+Therefore, the perimeter of the $n$-gon is $n\cdot x_n$.
+
+\begin{wrapfigure}{o}{47mm}
+\centering
+\includegraphics{mppics/pic-222}
+\end{wrapfigure}
+
+The circumference of the circle with the radius $r$ 
+might be defined as the limit
+$$\lim_{n\to\infty} n\cdot x_n=2\cdot\pi\cdot r.\eqlbl{eq:2pir}$$
+(This limit can be taken as the definition of~$\pi$.)
+
+In the following proof, we repeat the same construction in the h-plane.
+
+\parit{Proof.}
+Without loss of generality, we can assume that the center $O$ of the circle is the center of the absolute.
+
+By Lemma~\ref{lem:O-h-dist}, 
+the h-circle with the h-radius $r$ is the Euclidean circle with the center $O$ and the radius 
+$$a=\frac{e^r-1}{e^r+1}.$$
+
+Let $x_n$ and $y_n$ denote the side lengths of the regular $n$-gons inscribed in the circle in the Euclidean and hyperbolic plane respectively.
+
+Note that $x_n\to0$ as $n\to\infty$.
+By Lemma~\ref{lem:conformal},
+\begin{align*}
+\lim_{n\to\infty}\frac{y_n}{x_n}
+&=\frac{2}{1-a^2}.
+\end{align*}
+
+Applying \ref{eq:2pir},
+we get that the circumference of the h-circle can be found the following way:
+\begin{align*}
+\lim_{n\to\infty}n\cdot y_n
+&=\frac{2}{1-a^2}\cdot\lim_{n\to\infty}n\cdot x_n=
+\\
+&=\frac{4\cdot\pi\cdot a}{1-a^2}=
+\\
+&=\frac{4\cdot\pi\cdot\left(\frac{e^r-1}{e^r+1}\right)}{1-\left(\frac{e^r-1}{e^r+1}\right)^2}=
+\\
+&=2\cdot\pi\cdot\frac{e^{r}-e^{-r}}{2}=
+\\
+&=2\cdot\pi\cdot\sinh r.
+\end{align*}
+\qedsf
+
+\begin{thm}{Exercise}\label{ex:circum}
+Let $\circum_h(r)$ denotes the circumference of the h-circle of the h-radius~$r$.
+Show that 
+$$\circum_h(r+1)>2\cdot \circum_h(r)$$
+for all $r>0$.
+\end{thm}
+
+\section*{Pythagorean theorem}
+\addtocontents{toc}{Pythagorean theorem.}
+
+Recall that $\cosh$ denotes \index{ch@$\cosh$}\index{hyperbolic cosine}\emph{hyperbolic cosine};
+that is, the function defined by
+$$\cosh x\df \tfrac{e^x+e^{-x}}2.$$
+
+\begin{thm}{Hyperbolic Pythagorean theorem}\label{thm:pyth-h-poincare}
+Assume that $ACB$ is an h-triangle with right angle at~$C$.
+Set 
+\[a=BC_h,
+\quad 
+b=CA_h
+\quad\text{and}\quad
+c=AB_h.\]
+Then
+\[\cosh c=\cosh a\cdot\cosh b.
+\eqlbl{eq:thm:pyth-h-poincare}\]
+
+\end{thm}
+
+The formula \ref{eq:thm:pyth-h-poincare} will be proved by means of direct calculations.
+Before giving the proof, let us discuss the limit cases of this formula.
+
+Note that $\cosh x$ can be written using the Taylor expansion
+\[\cosh x=1+\tfrac1{2}\cdot x^2+\tfrac1{24}\cdot x^4+\dots.\]
+
+It follows that if $a$, $b$, and $c$ are small, then
+\begin{align*}
+1+\tfrac1{2}\cdot c^2&\approx \cosh c=\cosh a\cdot\cosh b\approx
+\\
+&\approx(1+\tfrac1{2}\cdot a^2)\cdot (1+\tfrac1{2}\cdot b^2)
+\approx 
+\\
+&\approx
+1+\tfrac1{2}\cdot (a^2+b^2).
+\end{align*}
+In other words, the original Pythagorean theorem (\ref{thm:pyth}) is a limit case of the hyperbolic Pythagorean theorem for small triangles.
+
+For large $a$ and $b$ the terms $e^{-a}$ and $e^{-b}$ are neglectable.
+In this case we have the following approximations:
+\begin{align*}
+\cosh a\cdot\cosh b&\approx \tfrac{e^a}2\cdot\tfrac{e^b}2=
+\\
+&=\tfrac{e^{a+b-\ln 2}}{2}\approx
+\\
+&\approx \cosh(a+b-\ln 2).
+\end{align*}
+Therefore $c\approx a+b-\ln 2$. 
+
+\begin{thm}{Exercise}\label{ex:c+1>a+b}
+Assume that $ACB$ is an h-triangle with right angle at~$C$.
+Set $a=BC_h$, $b=CA_h$, and $c=AB_h$.
+Show that
+\[c+\ln 2>a+b.\]
+
+\end{thm}
+
+\begin{wrapfigure}{o}{43mm}
+\centering
+\includegraphics{mppics/pic-224}
+\end{wrapfigure}
+
+In the proof of the hyperbolic Pythagorean theorem we use the following formula from Exercise~\ref{ex:cosh}:
+\[\cosh AB_h=\frac{AB\cdot A'B'+AB'\cdot A'B}{AA'\cdot BB'},\]
+here $A$, $B$ are h-points distinct from the center of absolute and $A'$, $B'$ are their inversions in the absolute.
+This formula is derived in the hints.
+
+
+\parit{Proof of \ref{thm:pyth-h-poincare}.}
+We assume that absolute is a unit circle.
+By the main observation (\ref{thm:main-observ}) we can assume that $C$ is the center of absolute.
+Let $A'$ and $B'$ denote the inverses of $A$ and $B$ in the absolute.
+
+Set $x=BC$, $y=AC$.
+By Lemma~\ref{lem:O-h-dist}
+\begin{align*}
+a&=\ln \tfrac{1+x}{1-x},
+&
+b&=\ln \tfrac{1+y}{1-y}.
+\end{align*}
+Therefore
+\[\begin{aligned}
+\cosh a&=\tfrac12\cdot (\tfrac{1+x}{1-x}+\tfrac{1-x}{1+x})=
+&&&&&
+\cosh b&=\tfrac12\cdot (\tfrac{1+y}{1-y}+\tfrac{1-y}{1+y})=
+\\
+&=\tfrac{1+x^2}{1-x^2},
+&&&&&
+&=\tfrac{1+y^2}{1-y^2}.
+\end{aligned}
+\eqlbl{cosha+coshb}
+\]
+
+Note that 
+\begin{align*}
+B'C&=\tfrac1x,
+&
+A'C&=\tfrac1y.
+\intertext{Therefore}
+BB'&=\tfrac1x-x,
+&
+AA'&=\tfrac1y-y.
+\intertext{Since the triangles $ABC$, $A'BC$, $AB'C$, $A'B'C$ are right, the original Pythagorean theorem (\ref{thm:pyth}) implies}
+AB&=\sqrt{x^2+y^2},
+&
+AB'&=\sqrt{\tfrac1{x^2}+y^2},
+\\
+A'B&=\sqrt{x^2+\tfrac1{y^2}},
+&
+A'B'&=\sqrt{\tfrac1{x^2}+\tfrac1{y^2}}.
+\end{align*}
+
+According to Exercise~\ref{ex:cosh},
+\[
+\begin{aligned}
+\cosh c&= \frac{AB\cdot A'B'+AB'\cdot A'B}{AA'\cdot BB'}=
+\\
+&=
+\frac{\sqrt{x^2+y^2}\cdot \sqrt{\tfrac1{x^2}
++\tfrac1{y^2}}+\sqrt{\tfrac1{x^2}+y^2}\cdot \sqrt{x^2+\tfrac1{y^2}}}
+{(\tfrac1y-y)\cdot (\tfrac1x-x)}=
+\\
+&=\frac{x^2+y^2+1+x^2\cdot y^2}
+{(1-y^2)\cdot (1-x^2)}=
+\\
+&=\frac{1+x^2}
+{1-x^2}\cdot
+\frac{1+y^2}
+{1-y^2}.
+\end{aligned}
+\eqlbl{coshc}
+\]
+Finally note that \ref{cosha+coshb} and \ref{coshc} imply \ref{eq:thm:pyth-h-poincare}.
+\qeds
+
+\addtocontents{toc}{\protect\end{quote}}

@@ -1,0 +1,389 @@
+\chapter{Projective model}\label{chap:klein}
+\addtocontents{toc}{\protect\begin{quote}}
+
+The {}\emph{projective model} is another model of hyperbolic plane discovered by Beltrami; it is often called {}\emph{Klein model}.
+The projective and conformal models are saying exactly the same thing but in two different languages. 
+Some problems in hyperbolic geometry admit simpler proof using the projective model and others have simpler proof in the conformal model.
+Therefore, it worth to know both. 
+
+\section*{Special bijection on the h-plane}
+\addtocontents{toc}{Special bijection on the h-plane.}
+
+Consider the conformal disc model with the absolute at the unit circle $\Omega$ centered at~$O$.
+Choose a coordinate system $(x,y)$ on the plane with the origin at $O$, 
+so the circle $\Omega$ is described by the equation $x^2+y^2=1$.
+
+{
+
+\label{pic:stereographic_projection-klein}
+\begin{wrapfigure}[17]{o}{48mm}
+\centering
+\includegraphics{mppics/pic-256}
+\caption*{The plane thru $P$, $O$, and $S$.}
+\end{wrapfigure}
+
+Let us think that our plane is the coordinate $xy$-plane in the Euclidean space; denote it by $\Pi$.
+Let $\Sigma$ be the unit sphere centered at $O$;
+it is described by the equation 
+$$x^2+y^2+z^2=1.$$
+Set $S=(0,0,-1)$ and $N=(0,0,1)$; 
+these are the south and north poles of~$\Sigma$.
+
+Consider stereographic projection $\Pi\to\Sigma$ from $S$;
+given point $P\in\Pi$ denote its image in $\Sigma$.
+Note that the  h-plane is mapped to the {}\emph{north hemisphere};
+that is, to the set of points $(x,y,z)$ in $\Sigma$ described by the inequality~$z>0$.
+
+}
+
+For a point $P'\in \Sigma$ consider its foot point $\hat P$
+on $\Pi$;
+this is the closest point to~$P'$.
+
+Note that the composition $P\z\leftrightarrow P'\z\leftrightarrow\hat P$ of these two maps
+gives a bijection from the h-plane to itself.
+Further note that $P=\hat P$
+ if and only if  $P\in \Omega$ or $P=O$.
+
+\begin{thm}{Exercise}\label{ex:P-->hat-P}
+Suppose that $P\leftrightarrow \hat P$ is the bijection described above.
+Assume that $P$ is a point of h-plane distinct from the center of absolute and $Q$ is its inverse in the absolute.
+Show that the midpoint of $[PQ]$ is the inversion of $\hat P$ in the absolute. 
+\end{thm}
+
+\begin{thm}{Lemma}\label{lem:P-hat-chord}
+Let $(PQ)_h$ be an h-line with the ideal points $A$ and~$B$.
+Then $\hat P,\hat Q\in[AB]$.
+
+Moreover, 
+$$\frac{A\hat Q\cdot B\hat P}{\hat QB\cdot \hat PA}
+=
+\left(\frac{AQ\cdot BP}{QB\cdot PA}\right)^2.
+\eqlbl{eq:lem:P-hat-chord}$$
+In particular, if $A,P,Q,B$ appear in the same order, then
+$$PQ_h=\tfrac12\cdot\ln\frac{A\hat Q\cdot B\hat P}{\hat QB\cdot \hat PA}.$$
+\end{thm}
+
+\parit{Proof.}
+Consider the stereographic projection $\Pi\to \Sigma$ from the south pole~$S$.
+Note that it fixes $A$ and $B$;
+denote by $P'$ and $Q'$ the images of $P$ and~$Q$;
+
+According to Theorem~\ref{thm:inversion-3d}\textit{\ref{thm:inversion-3d:cross-ratio}},
+$$\frac{AQ\cdot BP}{QB\cdot PA}=\frac{AQ'\cdot BP'}{Q'B\cdot P'A}.\eqlbl{eq:(AB;PQ)=(AB;P'Q')}$$
+
+By Theorem~\ref{thm:inversion-3d}\textit{\ref{thm:inversion-3d:angle}}, 
+each circline in $\Pi$ that is perpendicular to $\Omega$ 
+is mapped to a circle in $\Sigma$ that is still perpendicular to~$\Omega$.
+It follows that the stereographic projection sends $(PQ)_h$ to the intersection of the north hemisphere of $\Sigma$ with a plane perpendicular to~$\Pi$.
+
+Let $\Lambda$ denotes the plane;
+it contains the points $A$, $B$, $P'$, $\hat P$ and the circle $\Gamma=\Sigma\cap\Lambda$.
+(It also contains $Q'$ and $\hat Q$ but we will not use these points for a while.)
+
+{
+
+\begin{wrapfigure}{r}{30mm}
+\vskip-8mm
+\centering
+\includegraphics{mppics/pic-258}
+\caption*{The plane~$\Lambda$.}
+\end{wrapfigure}
+
+Note that 
+\begin{itemize}
+\item 
+$A,B,P'\in\Gamma$,
+\item $[AB]$ is a diameter of $\Gamma$,
+\item $(AB)=\Pi\cap\Lambda$,
+\item $\hat P\in [AB]$
+\item $(P'\hat P)\perp (AB)$.
+\end{itemize}
+
+}
+
+Since $[AB]$ is the diameter of $\Gamma$, 
+by Corollary~\ref{cor:right-angle-diameter},
+the angle $AP'B$ is right. 
+Hence $\triangle A\hat PP'\z\sim \triangle AP'B\z\sim \triangle P'\hat PB$.
+In particular
+$$\frac{AP'}{BP'}=\frac{A\hat P}{P'\hat P}=\frac{P'\hat P}{B\hat P}.$$
+Therefore
+$$\frac{A\hat P}{B\hat P}=\left(\frac{AP'}{BP'}\right)^2.\eqlbl{eq:AP/BP}$$
+
+The same way we get that
+$$\frac{A\hat Q}{B\hat Q}=\left(\frac{AQ'}{BQ'}\right)^2.\eqlbl{eq:AQ/BQ}$$
+Finally, note that
+\ref{eq:(AB;PQ)=(AB;P'Q')}+\ref{eq:AP/BP}+\ref{eq:AQ/BQ} imply \ref{eq:lem:P-hat-chord}.
+
+The last statement follows from \ref{eq:lem:P-hat-chord} and the definition of h-distance.
+Indeed,
+\begin{align*}
+PQ_h&\df\ln\frac{A Q\cdot B P}{QB\cdot PA}=
+\\
+&=\ln\left(\frac{A \hat Q\cdot B \hat P}{\hat QB\cdot \hat PA}\right)^{\frac12}=
+\\
+&=\tfrac12\cdot\ln\frac{A \hat Q\cdot B \hat P}{\hat QB\cdot \hat PA}.
+\end{align*}
+\qedsf
+
+{
+
+\begin{wrapfigure}{r}{36mm}
+\centering
+\vskip-8mm
+\includegraphics{mppics/pic-260}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:hex}
+Let $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ 
+be three circles perpendicular to the circle~$\Omega$.
+Let $[A_1B_1]$, $[A_2B_2]$, and $[A_3B_3]$ denote
+the common chords of $\Omega$ and $\Gamma_1$, $\Gamma_2$, $\Gamma_3$ respectively.
+Show that the chords $[A_1B_1]$, $[A_2B_2]$, and $[A_3B_3]$ intersect at one point inside $\Omega$ if and only if $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ intersect at two points.
+\end{thm}
+
+}
+
+
+\section*{Projective model}
+\addtocontents{toc}{Projective  model.}
+
+The following picture illustrates the map $P\mapsto \hat P$ described in the previous section --- 
+\begin{figure}[h!]
+\centering
+\includegraphics{mppics/pic-262}
+\end{figure}
+if you take the picture on the left and apply the map $P\mapsto \hat P$,
+you get the picture on the right.
+The pictures are {}\emph{conformal} and \index{projective model}\emph{projective model} of the hyperbolic plane respectively.
+The map $P\mapsto \hat P$ is a ``translation'' from one to another.
+
+In the projective model things look different;
+some become simpler,
+other things become more complicated.
+
+\parbf{Lines.}
+The h-lines in the projective model are chords of the absolute;
+more precisely, chords without its endpoints.
+
+This observation can be used to transfer statements about lines and points from the Euclidean plane to the h-plane.
+As an example let us state a hyperbolic version of Pappus' theorem for h-plane.
+
+\begin{thm}{Hyperbolic Pappus' theorem}\label{thm:pappus-h}
+Assume that two triples of h-points $A$, $B$, $C$,
+and $A'$, $B'$, $C'$ in the h-plane are h-collinear.
+Suppose that the h-points $X$, $Y$, and $Z$ are defined by
+\begin{align*}
+X&=(BC')_h\cap(B'C)_h,
+&
+Y&=(CA')_h\cap(C'A)_h,
+&
+Z&=(AB')_h\cap(A'B)_h.
+\end{align*}
+Then the points $X$, $Y$, $Z$ are h-collinear.
+\end{thm}
+
+In the projective model, this statement follows immediately from the original Pappus' theorem \ref{thm:pappus}.
+The same can be done for Desargues' theorem \ref{thm:desargues}.
+The same argument shows that the construction of tangent line with ruler only described in Exercise\ref{ex:tangent ruler} works in the h-plane as well.
+
+On the other hand, note that it is not at all easy to prove this statement using the conformal model.
+
+\parbf{Circles and equidistants.}
+The h-circles and equidistants in the projective model are certain type of ellipses and their open arcs.
+
+It follows since the stereographic projection sends circles on the plane to circles on the unit sphere and the foot point projection of circle back to the plane is an ellipse.
+(One may define \index{ellipse}\emph{ellipse} as a foot point projection of a circle.)
+
+
+
+\parbf{Distance.}
+Consider a pair of h-points $P$ and $Q$.
+Let $A$ and $B$ be the ideal point of the h-line in projective model;
+that is, $A$ and $B$ are the intersections of the Euclidean line $(PQ)$ with the absolute.
+
+Then by Lemma~\ref{lem:P-hat-chord},
+$$PQ_h=\tfrac12\cdot\ln\frac{AQ\cdot BP}{QB\cdot PA},\eqlbl{eq:proj-h-dist}$$
+assuming the points $A, P, Q, B$ appear on the line in the same order.
+
+{
+
+\begin{wrapfigure}{r}{36mm}
+\vskip-3mm
+\centering
+\includegraphics{mppics/pic-264}
+\end{wrapfigure}
+
+\parbf{Angles.}
+The angle measures in the projective model are very different from the Euclidean angles and it is hard to figure out by looking on the picture.\label{klein-angles}
+For example all the intersecting h-lines on the picture 
+are perpendicular.
+
+}
+
+There are two useful exceptions:
+
+\begin{itemize}
+\item If $O$ is the center of the absolute, then 
+$$\measuredangle_hAOB=\measuredangle AOB.$$
+\item If $O$ is the center of the absolute 
+and 
+$\measuredangle OAB\z=\pm\tfrac\pi2$, then 
+$$\measuredangle_h OAB=\measuredangle OAB=\pm\tfrac\pi2.$$
+\end{itemize}
+
+To find the angle measure in the projective model,
+you may apply a motion of the h-plane that moves 
+the vertex of the angle to the center of the absolute;
+once it is done the hyperbolic and Euclidean angles have the same measure.
+
+\parbf{Motions.}
+The motions of the h-plane in the conformal and projective models are relevant to inversive transformations and projective transformation in the same way.
+Namely: 
+\begin{itemize}
+\item Inversive transformations that preserve the h-plane describe motions of the h-plane in the conformal model.
+\item Projective transformations that preserve h-plane describe motions of the h-plane in the projective model.\footnote{The idea described in the solution of Exercise~\ref{ex:cone} and in the sketch of proof of Theorem~\ref{thm:circle-center-proj} can be used to construct many projective transformations of this type.}
+\end{itemize}
+
+The following exercise is a hyperbolic analog of Exercise~\ref{ex:s-medians}. 
+This is the first example of a statement that admits an easier proof using  the projective model.
+
+\begin{thm}{Exercise}\label{ex:h-median}
+Let $P$ and $Q$ be the points in h-plane that lie on the same distance from the center of the absolute.
+Observe that in the projective model, h-midpoint of $[PQ]_h$ coincides with the Euclidean midpoint of $[PQ]_h$.
+
+Conclude that if an h-triangle is inscribed in an h-circle, then its medians meet at one point.
+
+Recall that an h-triangle might be also inscribed in a horocycle or an equidistant.
+Think how to prove the statement in this case.
+\end{thm}
+
+{
+
+\begin{wrapfigure}{r}{34mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-266}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:klein-perp}
+Let $\ell$ and $m$ are  h-lines in the projective model.
+Let $s$ and $t$ denote the Euclidean lines tangent to the absolute
+at the ideal points of $\ell$. 
+Show that 
+if the lines $s$, $t$ and the extension of $m$ intersect at one point, then $\ell$ and $m$ are perpendicular h-lines. 
+\end{thm}
+
+}
+
+\begin{thm}{Exercise}\label{ex:klein-for-angle-parallelism}
+Use the projective model to derive the formula for angle of parallelism  (Proposition~\ref{prop:angle-parallelism}). 
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:klein-inradius}
+Use projective model to find the inradius of the ideal triangle.
+\end{thm}
+
+The projective model of h-plane can be used to give another proof of the hyperbolic Pythagorean theorem (\ref{thm:pyth-h-poincare}).
+
+First let us recall its statement:
+\[\cosh c=\cosh a\cdot\cosh b,\eqlbl{eq:hyp-pyth-proj}\]
+where $a\z=BC_h$, $b=CA_h$, and $c=AB_h$ and
+$\triangle_hACB$ is an h-triangle with right angle at~$C$.
+
+\begin{wrapfigure}{o}{34mm}
+\centering
+\includegraphics{mppics/pic-268}
+\end{wrapfigure}
+
+Note that we can assume that $A$ is the center of the absolute.
+Set 
+$s=BC$, $t =CA$, $u\z= AB$.
+According to the Euclidean Pythagorean theorem (\ref{thm:pyth}), we have
+$$u^2=s^2+t^2.\eqlbl{eq:hyp-proj}$$
+It remains to express $a$, $b$, and $c$ using $s$, $u$, and $t$ and show that \ref{eq:hyp-proj} implies~\ref{eq:hyp-pyth-proj}.
+
+\begin{thm}{Advanced exercise}\label{ex:pyth-h-proj}
+Finish the proof of hyperbolic Pythagorean theorem (\ref{thm:pyth-h-poincare}) indicated above.
+\end{thm}
+
+
+\section*{Bolyai's construction}
+\addtocontents{toc}{Bolyai's construction.}
+
+Assume we need to construct a line thru $P$ asymptotically parallel to the given line $\ell$ in the h-plane.
+
+If $A$ and $B$ are ideal points of $\ell$ in the projective model, 
+then we could simply draw the Euclidean line $(PA)$.
+However the ideal points do not lie in the h-plane; therefore there is no way to use them in the construction.
+
+In the following construction we assume that you know a compass-and-ruler construction of the perpendicular line; see Exercise~\ref{ex:construction-perpendicular}.
+\clearpage
+
+\begin{thm}{Bolyai's construction}
+\begin{enumerate}
+\item Drop a perpendicular from $P$ to~$\ell$; denote it by~$m$.
+Let $Q$ be the foot point of $P$ on~$\ell$.
+\item Erect a perpendicular from $P$ to~$m$; denote it by~$n$.
+\item Mark by $R$ a point on $\ell$ distinct from $Q$.
+\item Drop a perpendicular from $R$ to~$n$; denote it by~$k$. 
+\item Draw the circle $\Gamma$ with center $P$ and the radius $QR$. 
+Mark by $T$ a point of intersection of $\Gamma$ with~$k$.
+\item The line $(PT)_h$ is asymptotically parallel to~$\ell$.
+\end{enumerate}
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:Boyai-in-Euclid}
+Explain what happens if one performs the Bolyai construction in the Euclidean plane.
+\end{thm}
+
+To prove that Bolyai's construction gives the asymptotically parallel line in the h-plane,
+it is sufficient to show the following:
+
+\begin{thm}{Proposition}\label{prop:boyai}
+Assume $P$, $Q$, $R$, $S$, $T$ be points in h-plane
+such that 
+\begin{itemize}
+\item $S\in (RT)_h$,
+\item $(PQ)_h\perp (QR)_h$,
+\item $(PS)_h\perp(PQ)_h$,
+\item $(RT)_h\perp (PS)_h$ and 
+\item $(PT)_h$ and $(QR)_h$ are asymptotically parallel.
+\end{itemize}
+Then $QR_h=PT_h$.
+\end{thm}
+
+
+\parit{Proof.}
+We will use the projective model.
+Without loss of generality, we may assume that $P$ is the center of the absolute.
+As it was noted on page \pageref{klein-angles},
+in this case the corresponding Euclidean lines are also perpendicular;
+that is, $(PQ)\perp (QR)$, $(PS)\perp(PQ)$, and $(RT)\z\perp (PS)$.
+
+Let $A$ be the common ideal point of $(QR)_h$ and $(PT)_h$.
+Let $B$ and $C$ denote the remaining ideal points of $(QR)_h$ and $(PT)_h$ respectively.
+
+Note that the Euclidean lines $(PQ)$, $(TR)$, and $(CB)$ are parallel.
+
+\begin{wrapfigure}{o}{55mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-270}
+\vskip2mm
+\end{wrapfigure}
+
+Therefore, 
+\[\triangle AQP\sim \triangle ART \sim\triangle ABC.\]
+In particular,
+\[\frac{AC}{AB}=\frac{AT}{AR}=\frac{AP}{AQ}.\]
+
+It follows that
+\[\frac{AT}{AR}=\frac{AP}{AQ}=\frac{BR}{CT}=\frac{BQ}{CP}.\]
+In particular, $\tfrac{AT\cdot CP}{TC\cdot PA}=\tfrac{AR\cdot BQ}{RB\cdot QA}$.
+Applying the formula for h-distance \ref{eq:proj-h-dist}, we get that $QR_h=PT_h$.
+\qeds
+ 
+
+\addtocontents{toc}{\protect\end{quote}}

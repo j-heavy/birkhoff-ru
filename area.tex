@@ -1,0 +1,970 @@
+\chapter{Area}
+\label{chap:area}
+\addtocontents{toc}{\protect\begin{quote}}
+
+Area will be defined as a function satisfying certain conditions (page \pageref{page:area-def}).
+The so called {}\emph{Lebesgue measure} gives an example of such function.
+In particular a construction of Lebesgue measure implies the existence of area function.
+This construction is included in any textbook in real analysis.
+
+Based solely on its existence,  we develop the concept of area with no cheating.
+We choose this approach since any rigorous introduction to area is tedious.
+We do not want to cheat and at the same time we do not want to waste your time; 
+soon or later you will have to learn Lebesgue measure if it is not done already.
+
+\section*{Solid triangles}
+\addtocontents{toc}{Solid  triangles.}
+
+We say that the point $X$ lies \index{inside!a triangle}\emph{inside} a nondegenerate triangle $ABC$
+if the following three condition hold:
+
+{
+
+\begin{wrapfigure}{r}{27 mm}
+\vskip-20mm
+\centering
+\includegraphics{mppics/pic-292}
+\end{wrapfigure}
+
+
+\begin{itemize}
+\item $A$ and $X$ lie on the same side of the line~$(BC)$;
+\item $B$ and $X$ lie on the same side of the line~$(CA)$;
+\item $C$ and $X$ lie on the same side of the line~$(AB)$.
+\end{itemize}
+
+The set of all points inside $\triangle ABC$ 
+and on its sides $[AB]$, $[BC]$, $[CA]$
+will be called \index{triangle!solid triangle}\index{solid!triangle}\emph{solid triangle} $ABC$ and denoted by \index{25@$\solidtriangle$}$\solidtriangle ABC$.
+
+}
+
+\begin{thm}{Exercise}\label{ex:triangle-convex}
+Show that any solid triangle is \index{convex set}\emph{convex};
+that is, for any pair of points $X,Y\z\in\solidtriangle ABC$,
+then the line segment $[XY]$ lies in  $\solidtriangle ABC$.
+\end{thm}
+
+
+
+%\begin{thm}{Exercise}\label{ex:solid-triangle-sum}
+%Show that  $X\in\solidtriangle ABC$ if and only if
+%\[|\measuredangle AXB|+|\measuredangle BXC|+|\measuredangle CXA|=2\cdot\pi.\]
+%\end{thm}
+
+
+The notations $\triangle ABC$ and $\solidtriangle ABC$ look similar,
+they also have close but different meanings, 
+which better not to confuse.
+Recall that $\triangle ABC$ is an ordered triple of distinct points
+(see page \pageref{page:def:triangle}),
+while $\solidtriangle ABC$ is an infinite set of points.
+
+In particular, $\solidtriangle ABC=\solidtriangle BAC$ for any triangle $ABC$.
+Indeed, any point that belongs to the set $\solidtriangle ABC$ 
+also belongs to the set $\solidtriangle BAC$
+and the other way around.
+On the other hand,
+$\triangle ABC\ne\triangle BAC$ simply because the ordered triple of points $(A,B,C)$ is distinct from the ordered triple $(B,A,C)$.
+
+Note that $\solidtriangle ABC\cong\solidtriangle BAC$ even if $\triangle ABC\ncong\triangle BAC$, where congruence of the sets $\solidtriangle ABC$ and $\solidtriangle BAC$ 
+is understood the following way:
+
+\begin{thm}{Definition}\label{def:cong-sets}
+Two sets $\mathcal{S}$ and $\mathcal{T}$ in the plane  
+are called \index{congruent!sets}\emph{congruent} 
+(briefly \index{32@$\cong$}$\mathcal{S}\cong \mathcal{T}$)
+if 
+$\mathcal{T}=f(\mathcal{S})$ for some motion $f$ of the plane.
+\end{thm}
+
+If $\triangle ABC$ is not degenerate
+and \[\solidtriangle ABC\cong \solidtriangle A'B'C',\]
+then after relabeling the vertices of $\triangle ABC$ 
+we will have 
+\[\triangle ABC\cong \triangle A'B'C'.\]
+
+Indeed it is sufficient to show that 
+if $f$ is a motion that maps $\solidtriangle ABC$ to $\solidtriangle A'B'C'$,
+then $f$ maps each vertex of $\triangle ABC$ to a vertex $\triangle A'B'C'$.
+The latter follows from the characterization of vertexes of solid triangles given in the following exercise:
+
+\begin{thm}{Exercise}\label{ex:vertex}
+Let $\triangle ABC$ be nondegenerate and $X\z\in \solidtriangle ABC$.
+Show that $X$ is a vertex of $\triangle ABC$
+if and only if there is a line $\ell$ that intersects $\solidtriangle ABC$
+at the single point~$X$.
+\end{thm}
+
+\section*{Polygonal sets}
+\addtocontents{toc}{Polygonal sets.}
+
+\index{elementary set}\emph{Elementary set} on the plane 
+is a set of one of the following three types:
+\begin{itemize}
+ \item one-point set;
+ \item segment;
+ \item solid triangle.
+\end{itemize}
+
+\begin{wrapfigure}{r}{24 mm}
+\vskip-12mm
+\centering
+\includegraphics{mppics/pic-294}
+\end{wrapfigure}
+
+A set in the plane is called \index{polygonal set}\emph{polygonal} if it can be presented as a union of finite collection of elementary sets.
+
+Note that according to this definition, the empty set $\emptyset$
+is a polygonal set.
+Indeed, $\emptyset$ is a union of an empty collection of elementary sets.
+
+A polygonal set is called \index{polygonal set!degenerate polygonal set}\index{degenerate!polygonal set}\emph{degenerate} if it can be presented as union of finite number of one-point sets and segments.
+
+If $X$ and $Y$ lie on opposite sides of the line $(AB)$,
+then the union
+$\solidtriangle AXB\cup \solidtriangle BYA$
+is a polygonal set which is called \index{solid!quadrangle, parallelogram,\\ rectangle, square}\index{quadrangle!solid quadrangle}\emph{solid quadrangle} $AXBY$ and denoted by 
+\index{27@$\solidsquare$}$\solidsquare AXBY$.
+In particular, 
+we can talk about \index{parallelogram!solid parallelogram}\emph{solid parallelograms}, \index{rectangle!solid rectangle}\emph{rectangles}, and \index{square!solid square}\emph{squares}.
+
+\begin{wrapfigure}{o}{38 mm}
+\centering
+\includegraphics{mppics/pic-296}
+\end{wrapfigure}
+
+Typically a polygonal set admits many 
+presentation as union of a finite collection of elementary sets.
+For example, if $\square AXBY$ is a parallelogram, then
+\[\solidsquare AXBY=\solidtriangle AXB\cup \solidtriangle AYB=\solidtriangle XAY\cup \solidtriangle XBY.\]
+
+\begin{thm}{Exercise}\label{ex:solid-square}
+Show that a solid square is not degenerate.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:poly-circ}
+Show that a circle is not a polygonal set.
+\end{thm}
+
+\begin{thm}{Claim}\label{clm:poly-ring}
+For any two polygonal sets $\mathcal{P}$ and $\mathcal{Q}$,
+the union $\mathcal{P}\cup\mathcal{Q}$ 
+as well as the intersection $\mathcal{P}\cap\mathcal{Q}$ 
+are also polygonal sets.
+\end{thm}
+
+A class of sets that closed with respect to union and intersection  is called a {}\emph{ring of sets}.
+The claim above, therefore, states that polygonal sets in the plane form a ring of sets.
+
+\parit{Informal proof.}
+Let us present $\mathcal{P}$ and $\mathcal{Q}$
+as a union of finite collection of elementary sets $\mathcal{P}_1,\dots,\mathcal{P}_k$ 
+and $\mathcal{Q}_1,\dots,\mathcal{Q}_n$ respectively.
+
+{
+
+\begin{wrapfigure}{o}{22 mm}
+\centering
+\includegraphics{mppics/pic-298}
+\end{wrapfigure}
+
+Note that
+\[\mathcal{P}\cup\mathcal{Q}
+=
+\mathcal{P}_1
+\cup
+\dots
+\cup
+\mathcal{P}_k
+\cup
+\mathcal{Q}_1
+\cup
+\dots
+\cup
+\mathcal{Q}_n.\]
+Therefore, $\mathcal{P}\cup\mathcal{Q}$ is polygonal.
+
+Note that $\mathcal{P}\cap \mathcal{Q}$ is the union of sets $\mathcal{P}_i\cap \mathcal{Q}_j$ for all $i$ and $j$.
+Therefore, in order to show that $\mathcal{P}\cap \mathcal{Q}$ is polygonal,
+it is sufficient to show that each $\mathcal{P}_i\cap \mathcal{Q}_j$ is polygonal for any pair $i$,~$j$.
+
+The diagram should suggest an idea for the proof of the latter statement in case if $\mathcal{P}_i$ and  $\mathcal{Q}_j$ are solid triangles. 
+The other cases are simpler; a formal proof can be built on Exercise~\ref{ex:triangle-convex}
+\qeds
+
+\section*{Definition of area}
+\addtocontents{toc}{Definition of area.}
+
+\index{area}\emph{Area} is defined as a function $\mathcal{P}\mapsto \area\mathcal{P}$
+that returns a nonnegative real number $\area\mathcal{P}$ for any polygonal set $\mathcal{P}$ and satisfying the following conditions:\label{page:area-def}
+\textit{
+\begin{enumerate}[(a)]
+\item
+$\area\mathcal{K}_1=1$
+where  $\mathcal{K}_1$ a solid square with unit side;
+\item\label{area-3} the conditions
+\begin{align*}
+\mathcal{P}\cong\mathcal{Q}
+\quad 
+&\Rightarrow
+\quad \area\mathcal{P}=\area\mathcal{Q};
+\\
+\mathcal{P}\subset\mathcal{Q}
+\quad
+&\Rightarrow
+\quad 
+\area\mathcal{P}\le\area\mathcal{Q};
+\\
+\area\mathcal{P}+\area\mathcal{Q}
+&=
+\area(\mathcal{P}\cup\mathcal{Q})+\area(\mathcal{P}\cap\mathcal{Q})
+\end{align*}
+hold 
+for any two polygonal sets $\mathcal{P}$ and $\mathcal{Q}$.
+\end{enumerate}
+}
+
+The first condition is called \emph{normalization}; essentially it says that a solid unit square is used as a unit to measure area.
+The three conditions in \textit{(\ref{area-3})} are called \emph{invariance}, \emph{monotonicity}, and \emph{additivity}.
+
+Lebesgue measure, provides an example of area function; 
+namely if one takes $\area\mathcal{P}$  to be Lebesgue measure of $\mathcal{P}$,
+then the function $\mathcal{P}\mapsto\area\mathcal{P}$ satisfies the above conditions.
+
+The construction of Lebesgue measure can be found in any textbook on real analysis.
+We do not discuss it here.
+
+If the reader is not familiar with Lebesgue measure, then he should take existence of area function as granted; 
+it might be considered as an additional axiom altho it follows from the axioms \ref{def:birkhoff-axioms:0}--\ref{def:birkhoff-axioms:4}.
+
+\section*{Vanishing area and subdivisions}
+\addtocontents{toc}{Vanishing area and subdivisions.}
+
+\begin{thm}{Proposition}\label{prop:area-segment}
+Any one-point set as well as any segment in the Euclidean plane have  vanishing area.
+\end{thm}
+
+\parit{Proof.}
+Fix a line segment~$[AB]$.
+Consider a sold square $\solidsquare ABCD$.
+
+Note that given a positive integer $n$,
+there are $n$ disjoint segments $[A_1B_1],\dots,[A_nB_n]$ 
+in $\solidsquare ABCD$,
+such that each $[A_iB_i]$ is congruent to $[AB]$ in the sense of the Definition~\ref{def:cong-sets}.
+
+
+\begin{wrapfigure}[9]{o}{37 mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-300}
+\end{wrapfigure}
+
+Applying invariance, additivity, and monotonicity of the area function, 
+we get that
+\begin{align*}
+n\cdot \area[AB]
+&=\area\left([A_1B_1]\cup\dots\cup[A_nB_n]\right)\le
+\\
+&\le \area(\solidsquare ABCD)              
+\end{align*}
+That is,
+\[\area[AB]\le \tfrac1n\cdot\area(\solidsquare ABCD)\] 
+for any positive integer~$n$.
+Therefore, $\area[AB]\le 0$.
+On the other hand, by definition of area, $\area[AB]\ge 0$,
+hence
+\[\area[AB]= 0.\]
+
+For any one-point set $\{A\}$ 
+we have that $\{A\}\subset [AB]$.
+Therefore, 
+\[0\le \area\{A\}\le \area[AB]=0.\]
+Whence $\area\{A\}=0$.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:degenerate}
+Any degenerate polygonal set has vanishing area.
+\end{thm}
+
+\parit{Proof.}
+Let $\mathcal P$ be a degenerate set,
+say
+\[\mathcal{P}=[A_1B_1]\cup\dots\cup[A_nB_n]\cup\{C_1,\dots,C_k\}.\]
+Since area is nonnegative by definition, applying additivity several times, we get that
+\begin{align*}
+\area\mathcal{P}\le
+& \area[A_1B_1]+\dots+\area[A_nB_n]+
+\\
+&+\area\{C_1\}+\dots+\area\{C_k\}.
+\end{align*}
+By Proposition~\ref{prop:area-segment}, the right hand side vanish.
+
+On the other hand, 
+$\area\mathcal{P}\ge 0$,
+hence the result.
+\qeds
+
+We say that polygonal set $\mathcal{P}$ is \index{subdivision of polygonal set}\emph{subdivided} 
+into two polygonal sets $\mathcal{Q}_1,\dots,\mathcal{Q}_n$ 
+if $\mathcal{P}=\mathcal{Q}_1\cup\dots\cup \mathcal{Q}_n$ 
+and the intersection $\mathcal{Q}_i\cap\mathcal{Q}_j$ is degenerate for any pair $i$ and $j$.
+(Recall that according to Claim~\ref{clm:poly-ring},
+the intersections $\mathcal{Q}_i\cap\mathcal{Q}_j$ are polygonal.)
+
+\begin{thm}{Proposition}\label{prop:subdivision}
+Assume polygonal sets $\mathcal{P}$ is subdivided into polygonal sets $\mathcal{Q}_1,\dots,\mathcal{Q}_n$.
+Then 
+\[\area\mathcal{P}=\area\mathcal{Q}_1+\dots+\area\mathcal{Q}_n.\]
+
+\end{thm}
+
+\begin{wrapfigure}{r}{24 mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-302}
+\end{wrapfigure}
+
+\parit{Proof.}
+Assume $n=2$; by additivity of area,
+\[\area\mathcal{P}=\area\mathcal{Q}_1+\area\mathcal{Q}_2-\area(\mathcal{Q}_1\cap\mathcal{Q}_2).\]
+
+Since $\mathcal{Q}_1\cap\mathcal{Q}_2$ is degenerate,
+by Corollary~\ref{cor:degenerate},
+\[\area(\mathcal{Q}_1\cap\mathcal{Q}_2)=0.\]
+
+Applying this formula few times we get the general case.
+Indeed, if $\mathcal{P}$ is subdivided into $\mathcal{Q}_1,\dots,\mathcal{Q}_n$, then
+\begin{align*}
+\area\mathcal{P}&=\area\mathcal{Q}_1+\area(\mathcal{Q}_2\cup\dots\cup\mathcal{Q}_n)=
+\\
+&=\area\mathcal{Q}_1+\area \mathcal{Q}_2+\area( \mathcal{Q}_3\cup\dots\cup\mathcal{Q}_n)=
+\\
+&\ \ \ \vdots
+\\
+&=\area\mathcal{Q}_1+\area \mathcal{Q}_2+\dots+\area\mathcal{Q}_n.
+\end{align*}
+\qedsf
+
+\parbf{Remark.}
+Two polygonal sets $\mathcal{P}$ and $\mathcal{P}'$ are called \index{equidecomposable sets}\emph{equidecomposable} if they admit subdivisions into polygonal sets $\mathcal{Q}_1,\dots,\mathcal{Q}_n$ and $\mathcal{Q}'_1,\dots,\mathcal{Q}'_n$ such that 
+$\mathcal{Q}_i\cong\mathcal{Q}'_i$ for each $i$.
+
+According to the proposition, if $\mathcal{P}$ and $\mathcal{P}$ are equidecomposable, then $\area \mathcal{P}=\area\mathcal{P}'$.
+A converse to this statement also holds;
+namely \emph{if two nondegenerate polygonal sets have equal area, then they are equidecomposable.}
+
+The last statement was proved by William Wallace, Farkas Bolyai and Paul Gerwien.
+The analogous statement in three dimensions, known as \emph{Hilbert's third problem}, is false; it was proved by Max Dehn.
+
+
+
+\section*{Area of solid rectangles}
+\addtocontents{toc}{Area of solid rectangles,}
+
+\begin{thm}{Theorem}\label{thm:area-rect}
+A solid rectangle 
+with sides $a$ and $b$ has area $a\cdot b$.
+\end{thm}
+
+\begin{thm}{Algebraic lemma}\label{lem:alg-area}
+Assume that a function $s$ 
+returns a nonnegative real number $s(a,b)$ 
+for any pair of positive real numbers $(a,b)$ 
+and it satisfies the following identities:
+\begin{align*}
+s(1,1)&=1;
+\\
+s(a,b+c)&=s(a,b)+s(a,c)
+\\
+s(a+b,c)&=s(a,c)+s(b,c)
+\end{align*}
+for any $a,b,c>0$.
+Then 
+\[s(a,b)=a\cdot b\] 
+for any $a,b>0$.
+\end{thm}
+
+The proof is similar to the proof of Lemma~\ref{lem:R-auto}.
+
+\parit{Proof.}
+Note that if $a>a'$ and $b>b'$ then 
+\[s(a,b)\ge s(a',b').\eqlbl{s(a,b)>s(a',b')}\]
+Indeed, since $s$ returns nonnegative numbers, we get that
+\begin{align*}
+s(a,b)&=s(a',b)+s(a-a',b)\ge
+\\
+&\ge s(a',b)=
+\\
+&\ge s(a',b')+s(a',b-b')\ge
+\\
+&\ge s(a',b').
+\end{align*}
+
+Applying the second and third identity few times we get that
+\begin{align*}
+s(a,m\cdot b)=s(m\cdot a,b)=m\cdot s(a,b)
+\end{align*}
+for any positive integer $m$. Therefore
+\begin{align*}
+s(\tfrac kl,\tfrac mn)&=k \cdot s(\tfrac 1l,\tfrac mn)=
+\\
+&=k\cdot m \cdot s(\tfrac 1l,\tfrac 1n)=
+\\
+&=k\cdot m\cdot \tfrac 1l\cdot s(1, \tfrac 1n)=
+\\
+&=k\cdot m\cdot \tfrac 1l\cdot \tfrac 1n\cdot s(1,1)=
+\\
+&=\tfrac kl\cdot\tfrac mn
+\end{align*}
+for any positive integers $k$, $l$, $m$, and $n$.
+That is, the needed identity holds for any pair of rational numbers $a=\tfrac kl$ and $b=\tfrac mn$.
+
+Arguing by contradiction, assume $s(a,b)\ne a\cdot b$ for some pair of positive real numbers $(a,b)$. 
+We will consider two cases: $s(a,b)> a\cdot b$ and $s(a,b)< a\cdot b$.
+
+If $s(a,b)> a\cdot b$,
+we can choose a positive integer $n$ such that
+\[s(a,b)> (a+\tfrac1n)\cdot (b+\tfrac1n).\eqlbl{s(a,b)>}\]
+Set $k=\lfloor a\cdot n \rfloor+1$ and $m=\lfloor b\cdot n \rfloor+1$;
+equivalently, $k$ and $m$ are positive integers such that
+\[a< \tfrac kn\le a+\tfrac1n
+\quad\text{and}\quad 
+b<\tfrac mn\le b+\tfrac1n.\]
+By \ref{s(a,b)>s(a',b')}, we get that
+\begin{align*}
+s(a,b)&\le s(\tfrac kn,\tfrac mn)=
+\\
+&=\tfrac kn\cdot\tfrac mn\le
+\\
+&\le (a+\tfrac1n)\cdot(b+\tfrac1n),
+\end{align*}
+which contradicts \ref{s(a,b)>}.
+
+The case $s(a,b)< a\cdot b$ is similar.
+Fix a positive integer $n$ such that $a>\tfrac1n$, $b>\tfrac1n$, and
+\[s(a,b)< (a-\tfrac1n)\cdot (b-\tfrac1n).\eqlbl{s(a,b)<}\]
+Set $k=\lceil a\cdot n \rceil-1$ and $m=\lceil b\cdot n \rceil-1$; that is,
+\[a> \tfrac kn\ge a-\tfrac1n
+\quad\text{and}\quad 
+b>\tfrac mn\ge b-\tfrac1n.\]
+Applying \ref{s(a,b)>s(a',b')} again, we get that
+\begin{align*}
+s(a,b)&\ge s(\tfrac kn,\tfrac mn)=
+\\
+&=\tfrac kn\cdot\tfrac mn\ge
+\\
+&\ge (a-\tfrac1n)\cdot(b-\tfrac1n),
+\end{align*}
+which contradicts \ref{s(a,b)<}.
+\qeds
+
+
+\parit{Proof of Theorem~\ref{thm:area-rect}.}
+Let $\mathcal{R}_{a,b}$ denotes the solid rectangle with sides $a$ and~$b$.
+Set 
+\[s(a,b)=\area \mathcal{R}_{a,b}.\]
+
+By definition of area, 
+$s(1,1)=\area(\mathcal{K})=1$.
+That is, the first identity in the algebraic lemma holds.
+
+
+\begin{wrapfigure}{o}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-304}
+\end{wrapfigure}
+
+Note that the rectangle $\mathcal{R}_{a+b,c}$
+can be subdivided into two rectangle 
+congruent to $\mathcal{R}_{a,c}$
+and~$\mathcal{R}_{b,c}$.
+Therefore, by Proposition~\ref{prop:subdivision}, 
+\[
+\area \mathcal{R}_{a+b,c}=\area \mathcal{R}_{a,c}+\area \mathcal{R}_{b,c}
+\]
+That is, the second identity in the algebraic lemma holds.
+The proof of the third identity is analogues.
+
+It remains to apply the algebraic lemma.
+\qeds
+
+
+\section*{Area of solid parallelograms}
+\addtocontents{toc}{parallelograms}
+
+\begin{thm}{Proposition}\label{prop:area-parallelogram}
+Let $\square ABCD$ be a parallelogram in the Euclidean plane, $a=AB$ and $h$ be the distance between the lines $(AB)$ and~$(CD)$.
+Then 
+\[\area(\solidsquare ABCD)=a\cdot h.\]
+
+\end{thm}
+
+
+{
+
+\begin{wrapfigure}{o}{41 mm}
+\vskip-3mm
+\centering
+\includegraphics{mppics/pic-306}
+\end{wrapfigure}
+
+\parit{Proof.}
+Let $A'$ and $B'$ denote the foot points of $A$ and $B$
+on the line~$(CD)$.
+
+Note that $ABB'A'$ is a rectangle with sides $a$ and $h$.
+By Proposition~\ref{thm:area-rect},
+\[\area( \solidsquare ABB'A')=h\cdot a.\eqlbl{eq:ABBA}\]
+
+}
+
+Without loss of generality, we may assume that  $\solidsquare ABCA'$ 
+contains $\solidsquare ABCD$ and $\solidsquare ABB'A'$.
+In this case $\solidsquare ABCA'$ admits two subdivisions: 
+\[\solidsquare ABCA'=\solidsquare ABCD\cup\solidtriangle AA'D=\solidsquare ABB'A'\cup\solidtriangle BB'C.\]
+
+By Proposition~\ref{prop:subdivision},
+\[\begin{aligned}
+\area( \solidsquare ABCD)&+\area(\solidtriangle AA'D)=
+\\
+&=
+\area(\solidsquare ABB'A')+ \area (\solidtriangle BB'C).   
+  \end{aligned}
+\eqlbl{eq:area-sum}\]
+
+
+
+
+Note that 
+\[\triangle AA'D\cong \triangle BB'C.\eqlbl{eq:cong-area}\]
+Indeed, since the quadrangles $ABB'A'$ and $ABCD$ are parallelograms, 
+by Lemma~\ref{lem:parallelogram},
+we have that $AA'=BB'$, $AD=BC$, and $DC=AB\z=A'B'$.
+It follows that $A'D=B'C$.
+Applying the SSS congruence condition, we get \ref{eq:cong-area}.
+
+
+In particular,
+\[\area(\solidtriangle BB'C)=\area (\solidtriangle AA'D).
+\eqlbl{eq:area-trinagles}\]
+
+Subtracting \ref{eq:area-trinagles} from \ref{eq:area-sum},
+we get that
+\[\area (\solidsquare ABCD)=\area(\solidsquare ABB'D).\]
+It remains to apply \ref{eq:ABBA}.
+\qeds
+
+{
+
+\begin{wrapfigure}{r}{26 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-308}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:two-parallelograms}
+Assume $\square ABCD$ and $\square AB'C'D'$ are two parallelograms such that $B'\in[BC]$ and $D\z\in [C'D']$.
+Show that
+\[\area(\solidsquare ABCD)=\area(\solidsquare AB'C'D').\]
+
+\end{thm}
+
+}
+
+\section*{Area of solid triangles}
+\addtocontents{toc}{and triangles.}
+
+
+\begin{thm}{Theorem}\label{thm:area-of-triangle}
+Let $a=BC$ and $h_A$ to be the altitude from $A$
+in  $\triangle ABC$.
+Then 
+\[\area(\solidtriangle ABC)=\tfrac12\cdot a\cdot h_A.\]
+\end{thm}
+
+\parit{Proof.}
+Draw the line $m$ thru $A$ that is parallel to $(BC)$
+and line $n$ thru $C$ parallel to~$(AB)$.
+Note that the lines $m$ and $n$ are not parallel;
+denote by $D$ their point of intersection.
+By construction, $\square ABCD$ is a parallelogram.
+
+Note that $\solidsquare ABCD$ admits a subdivision into $\solidtriangle ABC$ and $\solidtriangle CDA$.
+Therefore, 
+\[\area(\solidsquare ABCD)
+=
+\area(\solidtriangle ABC)
++
+\area(\solidtriangle CDA)\]
+
+\begin{wrapfigure}{o}{28 mm}
+\centering
+\includegraphics{mppics/pic-310}
+\end{wrapfigure}
+
+Since $\square ABCD$ is a parallelogram,  Lemma~\ref{lem:parallelogram} implies that
+\[AB=CD
+\quad
+\text{and}
+\quad
+BC=DA.\]
+Therefore, by the SSS congruence condition, we have
+$\triangle ABC\z\cong\triangle CDA$.
+In particular
+\[\area(\solidtriangle ABC)
+=
+\area(\solidtriangle CDA).\]
+
+From above and Proposition~\ref{prop:area-parallelogram}, we get that
+\begin{align*}
+\area(\solidtriangle ABC)
+&=\tfrac12\cdot\area(\solidsquare ABCD)=
+\\
+&=\tfrac12\cdot h_A\cdot a
+\end{align*}
+\qedsf
+
+\begin{thm}{Exercise}\label{ex:three-trig}
+Let $h_A$, $h_B$, and $h_C$ denote the altitudes of $\triangle ABC$ from vertices $A$, $B$ and $C$ respectively.
+Note that from Theorem~\ref{thm:area-of-triangle},
+it follows that
+\[h_A\cdot BC=h_B\cdot CA=h_C\cdot AB.\]
+
+Give a proof of this statement without using area.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:half-parallelogram}
+Assume $M$ lies inside the parallelogram $ABCD$;
+that is, $M$ belongs to the solid parallelogram $\solidsquare ABCD$, but does not lie on its sides.
+Show that
+\[\area(\solidtriangle ABM)+\area(\solidtriangle CDM)
+=\tfrac12\cdot \area(\solidsquare ABCD).\]
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:area-diag}
+Assume that diagonals 
+of a nondegenerate quadrangle $ABCD$ 
+intersect at point $M$.
+Show that 
+\[\area(\solidtriangle ABM)\cdot\area(\solidtriangle CDM)
+=
+\area(\solidtriangle BCM)\cdot\area(\solidtriangle DAM).\]
+ 
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:area-inradius}
+Let $r$ be the inradius of $\triangle ABC$
+and $p$ be its {}\emph{semiperimeter}; 
+that is, $p=\tfrac12\cdot(AB+BC+CA)$.
+Show that
+\[\area(\solidtriangle ABC)=p\cdot r.\]
+
+\end{thm}
+
+
+
+\begin{thm}{Exercise}\label{ex:subdivision}
+Show that any polygonal set admits a subdivision into a finite collection of solid triangles and a degenerate set.
+Conclude that for any polygonal set, its area is uniquely defined.
+\end{thm}
+
+
+
+
+\section*{Area method}
+\addtocontents{toc}{Area method.}
+
+In this section we will give examples of
+slim proofs using the properties of area.
+Note that these proofs are not truly elementary since the price one pays to introduce the area function is high.
+
+{
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-312}
+\end{wrapfigure}
+
+We start with the proof of the Pythagorean theorem.
+In the Elements of Euclid, the Pythagorean theorem was formulated as equality  \ref{eq:pyth+area} below
+and the proof used a similar technique.
+
+\parit{Proof.}
+We need to show that 
+if $a$ and $b$ are legs and $c$ is the hypotenuse 
+of a right triangle, then
+\[a^2+b^2=c^2.\]
+
+Let $\mathcal{T}$ denotes the right solid triangle with legs $a$ and $b$
+and $\mathcal{K}_{x}$  the solid square with side~$x$.
+
+}
+
+Let us construct two subdivisions of $\mathcal{K}_{a+b}$:
+\begin{enumerate}[1.]
+\item Subdivide $\mathcal{K}_{a+b}$ into two solid squares congruent to $\mathcal{K}_a$ and $\mathcal{K}_b$
+and 4 solid triangles congruent to $\mathcal{T}$,
+see the first diagram.
+
+\item Subdivide $\mathcal{K}_{a+b}$ into one solid square congruent to $\mathcal{K}_c$
+and 4 solid right triangles congruent to $\mathcal{T}$,
+see the second diagram.
+
+\end{enumerate}
+
+Applying Proposition~\ref{prop:subdivision} few times,
+we get that
+\begin{align*}
+\area\mathcal{K}_{a+b}
+&=
+\area\mathcal{K}_{a}+\area\mathcal{K}_{b}+4\cdot\area\mathcal{T}=
+\\
+&=\area\mathcal{K}_{c}+4\cdot\area\mathcal{T}.
+\end{align*}
+Therefore, 
+\[\area\mathcal{K}_{a}+\area\mathcal{K}_{b}=\area\mathcal{K}_{c}.\eqlbl{eq:pyth+area}\]
+By Theorem~\ref{thm:area-rect},
+\[\area\mathcal{K}_x=x^2,\] 
+for any $x>0$. 
+Hence the statement follows.\qeds
+
+{
+
+\begin{wrapfigure}{r}{19mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-314}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:pyth-2}
+Build another proof of the Pythagorean theorem
+based on the diagram. 
+
+(In the notations above it shows a subdivision of $\mathcal{K}_c$ into $\mathcal{K}_{a-b}$ and four copies of~$\mathcal{T}$ if $a>b$.)
+\end{thm}
+
+} 
+
+\begin{thm}{Exercise}\label{ex:sum-3-dist}
+Show that the sum of distances from a point to the sides of an equilateral triangle is the same for all points inside the triangle.
+\end{thm}
+
+\begin{thm}{Claim}\label{clm:area-ratio}
+Assume  that two triangles $ABC$ and $A'B'C'$ in the Euclidean plane 
+have equal altitudes dropped from $A$ and $A'$ respectively.
+Then
+\[\frac{\area(\solidtriangle A'B'C')}{\area(\solidtriangle ABC)}
+=
+\frac{B'C'}{BC}.\]
+
+In particular, the same identity holds if $A=A'$ and the bases $[BC]$ and $[B'C']$ lie on one line.
+\end{thm}
+
+\parit{Proof.}
+Let $h$ be the altitude.
+By Theorem~\ref{thm:area-of-triangle},
+\[\frac{\area(\solidtriangle A'B'C')}{\area(\solidtriangle ABC)}
+=
+\frac{\frac12 \cdot h\cdot B'C'}{\frac12 \cdot h\cdot BC}
+=
+\frac{B'C'}{BC}.\]
+\qedsf
+
+Now let us show how to use this claim to prove Lemma~\ref{lem:bisect-ratio}.
+First, let us recall its statement:
+
+\parbf{Lemma ~\ref{lem:bisect-ratio}.}
+\textit{If $\triangle A B C$ is nondegenerate and its angle bisector at $A$ intersects $[BC]$ at the point~$D$.
+Then 
+$$\frac{AB}{AC}=\frac{DB}{DC}.$$}
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-316}
+\end{wrapfigure}
+
+\parit{Proof.}
+Applying  Claim~\ref{clm:area-ratio}, we get that
+\[\frac{\area(\solidtriangle ABD)}{\area(\solidtriangle ACD)}
+=\frac{BD}{CD}.\]
+
+By Proposition~\ref{prop:angle-bisect-dist} the triangles $ABD$ and $ACD$ have equal altitudes from~$D$.
+Applying  Claim~\ref{clm:area-ratio} again, we get that
+\[\frac{\area(\solidtriangle ABD)}{\area(\solidtriangle ACD)}=\frac{AB}{AC}\]
+and hence the result.
+\qeds
+
+Suppose $ABC$ is a nondegenerate triangle and $A'$ lies between $B$ and $C$.
+In this case the line segment $[AA']$ is called \index{cevian}\emph{cevian}%
+\footnote{it is named after Giovanni Ceva and pronounced as \emph{chevian}.} of $\triangle ABC$ at $A$.
+The second statement in the following exercise is called \index{Ceva's theor}\emph{Ceva's theorem}.
+
+
+
+\begin{thm}{Exercise}\label{ex:ceva}
+Let $ABC$ be a nondegenerate triangle.
+Suppose its cevians $[AA']$, $[BB']$ and $[CC']$ intersect at one point $X$.
+Show that 
+
+\vskip-3mm
+
+{
+
+\begin{wrapfigure}[6]{r}{40 mm}
+\vskip4mm
+\centering
+\includegraphics{mppics/pic-318}
+\end{wrapfigure}
+
+\begin{align*}
+\frac{\area(\solidtriangle ABX)}{\area(\solidtriangle BCX)}&=\frac{AB'}{B'C},
+\\
+\frac{\area(\solidtriangle BCX)}{\area(\solidtriangle CAX)}&=\frac{BC'}{C'A},
+\\
+\frac{\area(\solidtriangle CAX)}{\area(\solidtriangle ABX)}&=\frac{CA'}{A'B} .
+\end{align*}
+
+}
+
+Conclude that 
+\[\frac{AB'\cdot CA'\cdot BC'}{B'C\cdot A'B\cdot C'A}=1.\]
+\end{thm}
+
+\begin{wrapfigure}[5]{r}{40 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-319}
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:cross-ratio-area}
+Suppose that points $L_1$, $L_2$, $L_3$, $L_4$ lie on a line $\ell$ 
+and points $M_1$, $M_2$, $M_3$, $M_4$ lie on a line $m$. 
+Assume that the lines $(L_1M_1)$, $(L_2M_2)$, $(L_3M_3)$, and $(L_4M_4)$ pass thru a point $O$ that does not lie on $\ell$ nor~$m$.
+
+\begin{enumerate}[(a)]
+ \item\label{ex:cross-ratio-area:a} Apply Claim~\ref{clm:area-ratio} to show that
+ \[\frac{\area\solidtriangle OL_iL_j}{\area\solidtriangle OM_iM_j}=\frac{OL_i\cdot OL_j}{OM_i\cdot OM_j}\]
+ for any $i\ne j$.
+ \item\label{ex:cross-ratio-area:b} Use \textit{(\ref{ex:cross-ratio-area:a})} to prove that 
+ \[\frac{L_1L_2\cdot L_3L_4}{L_2L_3\cdot L_4L_1}=\frac{M_1M_2\cdot M_3M_4}{M_2M_3\cdot M_4M_1};\]
+ that is, the quadruples $(L_1, L_2, L_3, L_4)$ and $(M_1, M_2, M_3, M_4)$ have the same cross ratio.
+ 
+\end{enumerate}
+
+\end{thm}
+
+
+\section*{Area in
+the neutral planes and spheres}
+\addtocontents{toc}{Area in the neutral planes and spheres.}
+
+Area can be defined in the neutral planes and spheres.
+In the definition,
+the solid unit square $\mathcal{K}_1$ has to be  
+exchanged to a fixed nondegenerate polygonal set $\mathcal{U}$.
+One has to make such change for good reason --- 
+hyperbolic plane and sphere have no squares.
+
+The set $\mathcal{U}$ in this case plays role of the unit measure for the area
+and changing $\mathcal{U}$ will require conversion of area units.
+
+\begin{wrapfigure}{o}{26 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-320}
+\end{wrapfigure}
+
+According to the standard convention, the set $\mathcal{U}$
+is taken so that on small scales area behaves like area in the Euclidean plane.
+Say, 
+if $\mathcal{K}_a$ denotes the solid quadrangle $\solidsquare ABCD$ 
+with right angles at $A$, $B$, and $C$ such that  $AB=BC=a$, 
+then we may assume that
+\[\tfrac{1}{a^2}\cdot\area \mathcal{K}_a\to 1
+\quad
+\text{as}
+\quad 
+a\to0.\]
+
+This convention works equally well for spheres and neutral planes, including the Euclidean plane.
+In spherical geometry  equivalently we may assume that if $r$ is the radius of the sphere, 
+then the area of whole sphere is $4\cdot\pi\cdot r^2$.
+
+Recall that {}\emph{defect of triangle} $\triangle ABC$ is defined as 
+$$\defect(\triangle ABC)
+\df 
+\pi-|\measuredangle ABC|-|\measuredangle BCA|-|\measuredangle CAB|.$$
+It turns out that any neutral plane or  sphere
+there is a real number $k$
+such that 
+$$k\cdot\area(\solidtriangle ABC)+\defect(\triangle ABC)=0
+\eqlbl{eq:curv-defect}$$
+for any $\triangle ABC$.
+
+This number $k$ is called \index{curvature}\emph{curvature};
+$k=0$ for the Euclidean plane,
+$k=-1$ for the h-plane, 
+$k=1$ for the unit sphere,
+and $k=\tfrac1{r^2}$ for the sphere of radius~$r$.
+
+Since the angles of ideal triangle vanish, any ideal triangle in h-plane has area~$\pi$.
+Similarly in the unit sphere the area of equilateral triangle with right angles has area $\tfrac\pi2$;
+since whole sphere can be subdivided in eight such triangles, we get that the area of unit sphere is $4\cdot\pi$.
+
+The identity \ref{eq:curv-defect} can be used as an alternative way to introduce area function; it works on spheres and all neutral planes, except for the Euclidean plane.
+
+\section*{Quadrable sets}
+\addtocontents{toc}{Quadrable  sets.}
+
+A set $\mathcal{S}$ 
+in the plane is called \index{quadrable set}\emph{quadrable}
+if for any $\epsilon>0$ there are two polygonal sets 
+$\mathcal{P}$ and $\mathcal{Q}$
+such that 
+\[\mathcal{P}
+\subset
+\mathcal{S}\subset\mathcal{Q}
+\quad
+\text{and}
+\quad
+\area\mathcal{Q}-\area\mathcal{P}
+<
+\epsilon.\]
+
+If $\mathcal{S}$ is quadrable,
+its area  can be defined 
+as the necessarily unique real number $s=\area\mathcal{S}$
+such that the inequality
+\[\area\mathcal{Q}\le s\le \area\mathcal{P}
+\]
+holds for any polygonal sets $\mathcal{P}$ and $\mathcal{Q}$ such that $\mathcal{P}\subset\mathcal{S}\subset\mathcal{Q}$.
+
+\begin{thm}{Exercise}\label{ex:circle-is-quadrable}
+Let $\mathcal{D}$ be the unit disc;
+that is, $\mathcal{D}$ is a set that contains 
+the unit circle $\Gamma$ and all the points inside~$\Gamma$.
+
+Show that $\mathcal{D}$ is a quadrable set.
+\end{thm}
+
+Since $\mathcal{D}$ is quadrable, the expression $\area\mathcal{D}$ makes sense and the constant $\pi$ can be defined as $\pi=\area\mathcal{D}$.
+
+\medskip
+
+It turns out that the class of quadrable sets is the largest class for which 
+the area function satisfying the conditions on page \pageref{page:area-def} is uniquely defined.
+
+If you do not require uniqueness, then  there are ways to extend area function to all bounded sets.
+(A set in the plane is called \index{bounded set}\emph{bounded} if it lies inside of a circle.)
+In the hyperbolic plane and in the sphere
+there is no similar construction.
+If you wonder why,
+read about \index{doubling the ball}\emph{doubling the ball paradox} of Felix Hausdorff, Stefan Banach, and Alfred Tarski.
+
+\addtocontents{toc}{\protect\end{quote}}                          

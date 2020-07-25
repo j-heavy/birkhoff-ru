@@ -1,0 +1,56 @@
+\RequirePackage{snapshot}
+\documentclass[twoside]{book}
+\usepackage{geometry}
+\usepackage{lectures}
+\hypersetup{pdftitle={Euclidean plane and its relatives;
+a minimalist introduction.}}
+
+\geometry{top=0.9in, bottom=0.9in,inner=0.9in, outer=0.7in, paperwidth=6in, paperheight=9in}
+
+\makeindex
+%\overfullrule=100mm
+
+\begin{document}
+\input{title.tex}
+\input{intro.tex}
+
+\input{metric.tex}
+\input{axioms.tex}
+\input{half-planes.tex}
+\input{cong.tex}
+\input{perp.tex}
+\input{similar.tex}
+\input{parallel.tex}
+\input{triangle.tex}
+
+\input{inscribed-angle.tex}
+\input{inversion.tex}
+
+\input{absolute.tex}
+\input{poincare.tex}
+\input{h-plane.tex}
+
+\input{affine.tex}
+\input{proj.tex}
+
+\input{sphere.tex}
+\input{klein.tex}
+\input{complex.tex}
+\input{car.tex}
+\input{area.tex}
+
+\newgeometry{top=0.9in, bottom=0.9in,inner=0.5in, outer=0.5in}
+{\small
+\input{hints.tex}
+}
+\newpage
+\phantomsection
+{\scriptsize
+\input{all-lectures.ind}
+}
+\renewcommand{\bibname}{Used resources}
+{
+\printbibliography[heading=bibintoc]
+\fussy
+}
+\end{document}

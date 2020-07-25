@@ -1,0 +1,378 @@
+%\part*{Additional topics}
+\addtocontents{toc}{\protect\begin{center}}
+\addtocontents{toc}{\large{\bf Additional topics}}
+\addtocontents{toc}{\protect\end{center}}
+
+\chapter{Affine geometry}\label{chap:trans}
+\addtocontents{toc}{\protect\begin{quote}}
+
+\section*{Affine transformations}
+\addtocontents{toc}{Affine transformations.}
+
+\emph{Affine geometry} studies the so called \index{incidence structure}\emph{incidence structure} of the Euclidean plane.
+The incidence structure sees only which points lie on which lines and nothing else;
+it does not directly see distances, angle measures, and many other things.
+
+A bijection from the Euclidean plane to itself is called \index{affine transformation,s}\emph{affine transformation} if it maps lines to lines;
+that is, the image of any line is a line.
+So we can say that affine geometry studies
+the properties of the Euclidean plane preserved under affine transformations.
+
+\begin{thm}{Exercise}\label{ex:affine-par}
+Show that an affine transformation of the Euclidean plane sends any pair of parallel lines to a pair of parallel lines.
+\end{thm}
+
+The observation below follows since the lines are defined using the metric only.
+
+\begin{thm}{Observation}
+Any motion of the Euclidean plane is an affine transformation.
+\end{thm}
+
+The following exercise provides more general examples of affine transformations.
+
+\begin{thm}{Exercise}\label{ex:afine-linear}
+The following maps of a coordinate plane to itself are affine transformations:
+\begin{enumerate}[(a)]
+\item\label{ex:afine-linear:shear} Shear map defined by $(x,y)\mapsto (x+k\cdot y,y)$ for a constant~$k$.
+\item\label{ex:afine-linear:scaling} Scaling defined by $(x,y)\mapsto (a\cdot x,a\cdot y)$ for a constant $a\ne 0$.
+\item $x$-scaling and $y$-scaling defined respectively by 
+\[(x,y)\mapsto (a\cdot x,y),\quad\text{and}\quad(x,y)\mapsto (x,a\cdot y)\]
+for a constant $a\ne 0$.
+\item\label{affine-general-formula} A transformation defined by
+\[(x,y)\mapsto(a\cdot x+b\cdot y+r,c\cdot x+d\cdot y+s)\]
+for constants $a,b,c,d,r,z$ such that the matrix $(\begin{smallmatrix}a&b\\c&d\end{smallmatrix})$ is invertible. 
+\end{enumerate}
+\end{thm}
+
+From the fundamental theorem of affine geometry (\ref{thm:fundamental-theorem-of-affine-geometry}), it will follow that any affine transformation can be written in the form \textit{(\ref{affine-general-formula})}.
+
+Recall that points are \index{collinear}\emph{collinear} if they lie on one line.
+
+\begin{thm}{Exercise}\label{ex:collinear=affine}
+Suppose $P\mapsto P'$ is a bijection of the Euclidean plane that maps collinear triples of points to collinear triples.
+Show that $P\mapsto P'$ maps noncollinear triples to noncollinear.
+
+Conclude that $P\mapsto P'$ is an affine transformation.
+\end{thm}
+
+
+\section*{Constructions}
+\addtocontents{toc}{Constructions.}
+
+Let us consider geometric constructions with a ruler and a \index{parallel tool}\emph{parallel tool};
+the latter makes it possible to draw a line thru a given point parallel to a given line.
+By Exercisers~\ref{ex:affine-par}, any construction with these two tools is invariant with respect to affine transformations.
+For example, 
+to solve the following exercise,
+it is sufficient to prove that the midpoint of a given segment can be constructed with a ruler and a parallel tool.
+
+\begin{thm}{Exercise}\label{ex:midpoint-affine}
+Let $M$ be the midpoint of segment $[AB]$ in the Euclidean plane.
+Assume that an affine transformation sends the points $A$, $B$, and $M$
+to $A'$, $B'$, and $M'$ respectively.
+Show that $M'$ is the midpoint of~$[A'B']$.
+\end{thm}
+
+The following exercise will be used in the proof of Proposition~\ref{prop:affine-linear}.
+
+\begin{thm}{Exercise}\label{ex:R-hom}
+Assume that the points with coordinates $(0,0)$, $(1,0)$, $(a,0)$, and $(b,0)$ are given.
+Using a ruler and a parallel tool, construct points with coordinates $(a\cdot b,0)$ and $(a+b,0)$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:center-circ-affine}
+Use ruler and parallel tool to construct the center of a given circle.
+\end{thm}
+
+Note that the shear map (described in \ref{ex:afine-linear}\textit{\ref{ex:afine-linear:shear}}) can change angles between lines almost arbitrary.
+This observation can be used to prove the impossibility of some constructions;
+here is one example:
+
+\begin{thm}{Exercise}\label{ex:affine-perp}
+Show that with a ruler and a parallel tool one cannot construct a line perpendicular to a given line.
+\end{thm}
+
+\section*{Fundamental theorem of affine geometry}
+\addtocontents{toc}{Fundamental theorem of affine geometry.}
+
+Further we assume knowledge of vector algebra, namely multiplication by a real number, addition and the parallelogram rule.
+
+\begin{thm}{Exercise}\label{ex:parallelogram-rule}
+Show that affine transformations map parallelograms to parallelograms.
+Conclude that if $P\mapsto P'$ is an affine transformation, then
+\[\overrightarrow{XY}=\overrightarrow{AB},
+\quad\text{if and only if}\quad
+\overrightarrow{X'Y'}=\overrightarrow{A'B'}.\]
+
+\end{thm}
+
+
+\begin{thm}{Proposition}\label{prop:affine-linear}
+Let $P\mapsto P'$ be an affine transformation of the Euclidean plane.
+Then, for any triple of points $O$, $X$, $P$, we have
+\[\overrightarrow{OP}=t\cdot \overrightarrow{OX}
+\quad\text{if and only if}\quad
+\overrightarrow{O'P'}=t\cdot \overrightarrow{O'X'}.
+\eqlbl{eq:OP=tOX}\]
+
+\end{thm}
+
+\parit{Proof.}
+Observe that the affine transformations described in Exercise~\ref{ex:afine-linear} as well as all motions satisfy the condition \ref{eq:OP=tOX}.
+Therefore a given affine transformation $P\mapsto P'$ satisfies \ref{eq:OP=tOX} if and only if its composition with motions and scalings satisfies \ref{eq:OP=tOX}.
+
+Applying this observation, we can reduce the problem to its partial case.
+Namely, we may assume that $O'=O$, $X'=X$, the point $O$ is the origin of a coordinate system, and $X$ has coordinates $(1,0)$.
+
+In this case, $\overrightarrow{OP}=t\cdot \overrightarrow{OX}$ if and only if $P=(t,0)$.
+Since $O$ and $X$ are fixed, the transformation maps the $x$-axis to itself.
+That is, $P'=(f(t),0)$ for some function $t\mapsto f(t)$,
+or, equivalently, $\overrightarrow{O'P'}=f(t)\cdot \overrightarrow{O'X'}$.
+It remains to show that 
+\[f(t)=t
+\eqlbl{eq:f(x)=x}\]
+for any $t$.
+
+Since $O'=O$ and $X'=X$, we get that $f(0)=0$ and $f(1)=1$.
+Further, according to Exercise~\ref{ex:R-hom}, we have that 
+$f(x\cdot y)=f(x)\cdot f(y)$ and $f(x+y)=f(x)+f(y)$ for any $x,y\in\mathbb{R}$.
+By the algebraic lemma (proved below, see \ref{lem:R-auto}), these conditions imply \ref{eq:f(x)=x}.
+\qeds
+
+\begin{thm}{Fundamental theorem of affine geometry}\label{thm:fundamental-theorem-of-affine-geometry}
+Suppose an affine transformation maps a nondegenerate triangle $OXY$ to a triangle $O'X'Y'$.
+Then $\triangle O'X'Y'$ is nondegenerate, and
+\[\overrightarrow{OP}=x\cdot\overrightarrow{OX}+y\cdot\overrightarrow{OY}\quad\text{if and only if}\quad\overrightarrow{O'P'}=x\cdot\overrightarrow{O'X'}+y\cdot\overrightarrow{O'Y'}.\]
+\end{thm}
+
+\parit{Proof.}
+Since an affine transformation maps lines to lines, the triangle
+$O'X'Y'$ is nondegenerate.
+
+If $x=0$ or $y=0$, then the second statement follows directly from the proposition.
+Otherwise consider points $V$ and $W$ defined by
+\[\overrightarrow{OV}=x\cdot\overrightarrow{OX},
+\quad
+\overrightarrow{OW}=y\cdot\overrightarrow{OY}.
+\]
+By the proposition,
+\[\overrightarrow{O'V'}=x\cdot\overrightarrow{O'X'},
+\quad
+\overrightarrow{O'W'}=y\cdot\overrightarrow{O'Y'}.
+\]
+
+\begin{wrapfigure}{o}{33mm}
+\centering
+\includegraphics{mppics/pic-225}
+\end{wrapfigure}
+
+Note that 
+\[\overrightarrow{OP}=\overrightarrow{OV}+\overrightarrow{OW},\]
+or, equivalently, $\square OVPW$ is a parallelogram.
+According to Exercise~\ref{ex:affine-par}, $\square O'V'P'W'$ is a parallelogram as well.
+Therefore 
+\begin{align*}\overrightarrow{O'P'}&=\overrightarrow{O'V'}+\overrightarrow{O'W'}=
+\\
+&=x\cdot\overrightarrow{O'X'}+y\cdot\overrightarrow{O'Y'}.
+\end{align*}
+\qedsf
+
+\begin{thm}{Exercise}\label{ex:affine-continuous}
+Show that any affine transformation is continuous.
+\end{thm}
+
+The following exercise provides the converse to Exercise \ref{ex:afine-linear}\textit{\ref{affine-general-formula}}.
+
+\begin{thm}{Exercise}\label{ex:affine-coordinates}
+Show that any affine transformation can be written in coordinates as 
+\[(x,y)\mapsto(a\cdot x+b\cdot y+r,c\cdot x+d\cdot y+s)\]
+for constants $a,b,c,d,r,s$ such that the matrix $(\begin{smallmatrix}a&b\\c&d\end{smallmatrix})$ is invertible. 
+\end{thm}
+
+
+\section*{Algebraic lemma}
+\addtocontents{toc}{Algebraic lemma.}
+
+The following lemma was used in the proof of Proposition~\ref{prop:affine-linear}.
+
+\begin{thm}{Lemma}\label{lem:R-auto}
+Assume $f\:\mathbb{R}\to\mathbb{R}$ is a function such that for any $x,y\in\mathbb{R}$ we have
+\begin{enumerate}[(a)]
+\item\label{lem:R-auto:a} $f(1)=1$,
+\item\label{lem:R-auto:b} $f(x+y)=f(x)+f(y)$,
+\item\label{lem:R-auto:c} $f(x\cdot y)=f(x)\cdot f(y)$.
+\end{enumerate}
+
+Then $f$ is the identity function; that is,
+$f(x)=x$ for any $x\in \mathbb{R}$.
+\end{thm}
+
+Note that we do not assume that $f$ is continuous.
+
+A function $f$ satisfying these three conditions
+is called a \index{field automorphism}\emph{field automorphism}.
+Therefore, the lemma states that the identity function is the only automorphism of the field of real numbers.
+For the field of complex numbers, the conjugation $z\mapsto\bar z$ (see page \pageref{page:cojugation=authomorphism}) gives an example of a nontrivial automorphism.
+
+\parit{Proof.}
+By \textit{(\ref{lem:R-auto:b})} we have
+\[f(0)+f(1)=f(0+1).\]
+By \textit{(\ref{lem:R-auto:a})},
+\[f(0)+1=1;\]
+whence
+\[f(0)=0.
+\eqlbl{eq:0=0}\]
+
+Applying \textit{(\ref{lem:R-auto:b})} again, we get that
+\[0=f(0)=f(x)+f(-x).\]
+Therefore, 
+\[f(-x)=-f(x)
+\quad
+\text{for any}
+\quad
+x\in \mathbb{R}.
+\eqlbl{eq:f-x}\] 
+
+Applying \textit{(\ref{lem:R-auto:b})} recurrently, we get that
+\begin{align*}
+f(2)&=f(1)+f(1)=1+1=2;\\
+f(3)&=f(2)+f(1)=2+1=3;\\
+&\dots
+\end{align*}
+Together with \ref{eq:f-x},
+the latter implies that 
+$$f(n)=n
+\quad
+\text{for any integer}
+\quad
+n.$$ 
+
+By \textit{(\ref{lem:R-auto:c})}
+\[f(m)=f(\tfrac mn)\cdot f(n).\]
+Therefore
+$$f(\tfrac mn)=\tfrac mn \eqlbl{eq:m/n}$$
+for any rational number~$\tfrac mn$.
+
+Assume~$a\ge 0$.
+Then the equation $x\cdot x=a$ has a real solution $x\z=\sqrt{a}$.
+Therefore, $[f(\sqrt{a})]^2=f(\sqrt{a})\cdot f(\sqrt{a})=f(a)$.
+Hence $f(a)\ge 0$.
+That is,
+\[a\ge 0\quad\Longrightarrow\quad f(a)\ge 0.\eqlbl{a>0=>b>0}\]
+
+Applying \ref{eq:f-x}, 
+we also get 
+\[a\le 0\quad \Longrightarrow\quad f(a)\le 0.\eqlbl{a<0=>b<0}\]
+
+Now assume $f(a)\ne a$ for some $a\in\mathbb{R}$.
+Then there is a rational number $\tfrac{m}{n}$ that lies between $a$ and $f(a)$;
+that is, 
+the numbers 
+\[x\z=a-\tfrac{m}{n}\quad\text{and}\quad y=f(a)-\tfrac{m}{n}\]
+have opposite signs.
+
+By \ref{eq:m/n},
+\begin{align*}
+y+\tfrac{m}{n}&=f(a)=
+\\
+&=f(x+\tfrac{m}{n})=
+\\
+&=f(x)+f(\tfrac{m}{n})=
+\\
+&=f(x)+\tfrac{m}{n};
+\end{align*}
+that is, $f(x)=y$.
+By \ref{a>0=>b>0} and \ref{a<0=>b<0} the values $x$ and $y$ cannot have opposite signs --- a contradiction.
+\qeds
+
+%\begin{thm}{Exercise}\label{ex:Q(sqrt(2)}
+%Let $S$ denotes the set of all numbers $p+q\cdot\sqrt2$, where $p$ and $q$ are rational numbers.
+%Observe that for the map $f\:p+q\cdot\sqrt2\mapsto p-q\cdot\sqrt2$, we have $f(1)=1$, $f(x+y)=f(x)+f(y)$, and $f(x\cdot y)=f(x)\cdot f(y)$ for any $x,y\in S$.
+%Since $f(\sqrt2)=-\sqrt2$ the map is not identity, so the proof of algebraic lemma can not be ap
+%\end{thm}
+
+
+
+\section*{On inversive transformations}
+\addtocontents{toc}{On inversive transformations.}
+
+
+Recall that the inversive plane is the Euclidean plane with an added point at infinity, denoted by~$\infty$.
+We assume that every line passes thru~$\infty$.
+Recall that the term {}\emph{circline} stands for {}\emph{circle or line}.
+
+An \index{inversive transformation}\emph{inversive transformation} is a bijection from the inversive plane to itself that sends circlines to circlines.
+\emph{Inversive geometry} studies the {}\emph{circline incidence structure} of the inversive plane
+(it sees which points lie on which circlines and nothing else).
+
+\begin{thm}{Theorem}\label{thm:inversions-inversive}
+A map from the inversive plane to itself is an inversive transformation
+if and only if it can be presented as a composition of inversions and reflections.  
+\end{thm}
+
+Exercise~\ref{ex:inversion-Mob} gives another description of inversive transformations by means of complex coordinates.
+
+\parit{Proof.}
+Evidently, reflection is an inversive transformation --- it maps lines to lines and circles to circles.
+According to Theorem~\ref{thm:inverse-cline}, any inversion is an inversive transformation as well.
+Therefore, the same holds for any composition of inversions and reflections.
+
+To prove the converse, 
+fix an inversive transformation~$\alpha$.
+
+Assume $\alpha(\infty)=\infty$.
+Recall that any circline passing thru $\infty$ is a line.
+If follows that $\alpha$ maps lines to lines;
+that is,
+$\alpha$ is an affine transformation that also maps circles to circles.
+
+Note that any motion or scaling (defined in Exercise~\ref{ex:afine-linear}\textit{\ref{ex:afine-linear:scaling}}) are affine transformations that map circles to circles.
+Composing $\alpha$ with motions and scalings, we can obtain another affine transformation $\alpha'$ that maps a given unit circle $\Gamma$ to itself.
+By Exercise~\ref{ex:center-circ-affine},
+$\alpha'$ fixes the center, say $O$, of the circle $\Gamma$.
+
+Set $P'=\alpha'(P)$.
+It follows that if $OP=1$, then $OP'=1$.
+By Proposition~\ref{prop:affine-linear}, $OP=OP'$ for any point $P$.
+Finally, by Exercise~\ref{ex:parallelogram-rule}, we have that if 
+$\overrightarrow{XY}=\overrightarrow{OP}$, then $\overrightarrow{X'Y'}=\overrightarrow{O'P'}$.
+It follows that $XY=X'Y'$ for any points $X$ and $Y$;
+that is, $\alpha'$ is a motion.
+
+Summarizing the discussion above, $\alpha$ is a composition of motions and scalings.
+Observe that any scaling is a composition of two inversions in concentric circles.
+Recall that any motion is a composition of reflections (see Exercise~\ref{ex:3-reflections}).
+Whence $\alpha$ is a composition of inversions and reflections.
+
+
+In the remaining case $\alpha(\infty)\ne \infty$, set $P=\alpha(\infty)$.
+Consider an inversion $\beta$ in a circle with center at~$P$ and set $\gamma=\beta\circ\alpha$.
+Note that $\beta(P)=\infty$; 
+therefore, $\gamma(\infty)=\infty$.
+Since $\alpha$ amd $\beta$ are inversive, so is $\gamma$.
+From above we get that $\gamma$ is a composition of reflections and inversions.
+Since $\beta$ is self-inverse, we get
+$\alpha=\beta\circ\gamma$;
+therefore $\alpha$ is a composition of reflections and inversions as well.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:inversive-angle}
+Show that inversive transformations preserve the angle between arcs up to sign.
+
+More precisely, assume $A'B_1'C_1'$, $A'B_2'C_2'$ are the images of two arcs $AB_1C_1$, $AB_2C_2$ under an inversive transformation.
+Let $\alpha$ and $\alpha'$ denote the angle between the tangent half-lines to $AB_1C_1$ and $AB_2C_2$ at $A$
+and the angle between the tangent half-lines to $A'B_1'C_1'$ and $A'B_2'C_2'$ at $A'$ respectively.
+Then 
+\[\alpha'=\pm \alpha.\]
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:reflection/inversive}
+Show that any reflection can be presented as a composition of three inversions. 
+\end{thm}
+
+The exercise above implies a stronger version of Theorem~\ref{thm:inversions-inversive};
+namely \emph{any inversive transformation is a composition of inversions} ---
+no reflections needed.
+
+\addtocontents{toc}{\protect\end{quote}}
