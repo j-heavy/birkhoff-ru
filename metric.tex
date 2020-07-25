@@ -88,112 +88,111 @@ $$d(A,B)=0.$$
 $$d(A, C) \le d(A, B) + d(B, C).$$
 \end{enumerate}
 \index{metric space}\emph{Метрическое пространство} — непустое множество с определённой на нём метрикой. 
-More formally, a metric space is a pair $(\mathcal X, d)$ where $\mathcal X$ is a set and $d$ is a metric on~$\mathcal X$.
+Более формально, матрическое пространство — это пара $(\mathcal X, d)$, $\mathcal X$ — множество и $d$ — метрика над ~$\mathcal X$.
 
-The elements of $\mathcal X$ are called \index{point}\emph{points} of the metric space.
-Given two points $A,B\z\in \mathcal X$, 
-the value $d(A, B)$ is called \index{distance}\emph{distance} from $A$ to~$B$.
+Элементы $\mathcal X$ называются \index{point}\emph{точки} метрического пространства.
+Для двух точек $A,B\z\in \mathcal X$, 
+значение $d(A, B)$ будет называться \index{distance}\emph{расстояние} от $A$ до~$B$.
 \end{thm}
 
-\section*{Examples}
+\section*{Примеры}
 \addtocontents{toc}{Examples.}
 
 \begin{itemize}
-\item {}\emph{Discrete metric.} Let $\mathcal X$ be an arbitrary set. 
-For any $A,B\z\in\mathcal X$, 
-set $d(A,B)\z=0$ if $A=B$ and $d(A,B)=1$ otherwise.
-The metric $d$ is called \index{discrete metric}\emph{discrete metric} on~$\mathcal X$.
-\item\index{real line}\emph{Real line.}
-Set of all real numbers ($\mathbb{R}$) with metric $d$ defined by 
+\item {}\emph{Дискретная метрика.} Пусть $\mathcal X$ — произвольное множество. 
+Для любых $A,B\z\in\mathcal X$, 
+$d(A,B)\z=0$, если $A=B$ и $d(A,B)=1$ в остальных случаях.
+Метрика $d$ называется \index{discrete metric}\emph{дискретной метрикой} над~$\mathcal X$.
+\item\index{real line}\emph{Вещественная прямая.}
+Множество всех действительных чисел ($\mathbb{R}$) с метрикой $d$ определённой как
 $$d(A,B)\df|A-B|.$$
 \end{itemize}
 
-\begin{thm}{Exercise}\label{ex:dist-square}
-Show that $d(A,B)=|A-B|^2$ is {}\emph{not} a metric on $\mathbb{R}$.
+\begin{thm}{Упражнение}\label{ex:dist-square}
+Докажите, что $d(A,B)=|A-B|^2$ {}\emph{не} является метрикой над $\mathbb{R}$.
 \end{thm}
 
 \begin{itemize}
-\item {}\emph{Metrics on the plane.}
-Let $\mathbb{R}^2$ denotes the set of all pairs $(x,y)$ of real numbers.
-Assume $A=(x_A,y_A)$ and $B=(x_B,y_B)$.
-Consider the following metrics on $\mathbb{R}^2$:
+\item {}\emph{Метрика на плоскости.}
+Пусть $\mathbb{R}^2$ обозначает множество всех пар $(x,y)$ действительных чисел.
+Допустим, $A=(x_A,y_A)$ и $B=(x_B,y_B)$.
+Рассмотрим следующие метрики над $\mathbb{R}^2$:
 \begin{itemize}
-\item\index{Euclidean metric}\emph{Euclidean metric,} denoted by \index{59@$d_1$, $d_2$, $d_\infty$}$d_2$, and defined as \label{def:d_2}
+\item\index{Евклидова метрика{Euclidean metric}\emph{Евклидова метрика,} обозначаемая как \index{59@$d_1$, $d_2$, $d_\infty$}$d_2$ и определяемая как \label{def:d_2}
 $$d_2(A,B)=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2}.$$
-\item\label{Manhattan plane}\index{Manhattan plane}\emph{Manhattan metric,} denoted by $d_1$ and defined as 
+\item\label{Manhattan plane}\index{Manhattan plane}\emph{Манхэттенское расстояние,} обозначаемое как $d_1$ и определяемое как
 $$d_1(A,B)=|x_A-x_B|+|y_A-y_B|.$$
-\item{}\emph{Maximum metric,} denoted by $d_\infty$ and defined as 
+\item{}\emph{Расстояние Чебышёва,} обозначаемое как $d_\infty$ и определяемое как 
 $$d_\infty(A,B)=\max\{|x_A-x_B|,|y_A-y_B|\}.$$
 \end{itemize}
 \end{itemize}
 
-\begin{thm}{Exercise}\label{ex:d_1+d_2+d_infty}
-Prove that the following functions are metrics on $\mathbb{R}^2$:
+\begin{thm}{Упражнение}\label{ex:d_1+d_2+d_infty}
+Докажите, что следующие функции являются метрикой над $\mathbb{R}^2$:
 (a)~$d_1$; (b)~$d_2$; (c)~$d_\infty$.
 \end{thm}
 
 
-\section*{Shortcut for distance}
+\section*{Сокращения для расстояния}
 \addtocontents{toc}{Shortcut for distance.}
 
-Most of the time, 
-we study only one metric on the space.
-Therefore, we will not need to name the metric each time.
+Большую часть времени,
+мы изучаем только одну метрику в пространстве,
+поэтому нам не нужно будет каждый раз называть метрику.
 
-Given a metric space $\mathcal X$,
-the distance between points $A$ and $B$ will be further denoted by 
+В метрическом пространстве $\mathcal X$,
+расстояние между $A$ и $B$ в дальнейшем будет обозначаться как 
 $$AB
 \quad
-\text{or}
+\text{или}
 \quad
 d_{\mathcal X}(A,B);$$
-the latter is used only if we need to emphasize that $A$ and $B$ are points of the metric space~$\mathcal X$.
+последнее используется только в том случае, если нам нужно подчеркнуть, что $A$ и $B$ являются точками метрического пространства~$\mathcal X$.
 
-For example, the triangle inequality can be written as 
+Например, неравенство треугольника может быть записано как
 $$AC\le AB+BC.$$
 
-For the multiplication, we will always use ``$\cdot$'',
-so $AB$ could not be confused with $A\cdot B$.
+Для умножения мы будем использовать нотацию ``$\cdot$'',
+в таком случае, мы не сможем спутать $AB$ с $A\cdot B$.
 
-\section*{Isometries, motions, and lines}
+\section*{Изометрия, движение и отрезки}
 \addtocontents{toc}{Isometries, motions, and lines.}
 
-In this section, we define {}\emph{lines} in a metric space.
-Once it is done the sentence {}\emph{``We can draw a unique line that passes thru two given points.''} becomes rigorous; see (\ref{preaxiomII}) on page \pageref{preaxiomII}. 
+В этой части мы определим {}\emph{отрезки} в метрическом пространстве.
+Как только мы это сделаем, утверждение {}\emph{``Мы можем провести только один отрезок, проходящий через две заданные точки.''} станет строгим; см. (\ref{preaxiomII}) на странице \pageref{preaxiomII}. 
 
-Recall that a map $f\:\mathcal{X}\to\mathcal{Y}$
-is a \index{bijection}\emph{bijection},
-if it gives an exact pairing of the elements of two sets.
-Equivalently, $f\:\mathcal{X}\to\mathcal{Y}$ is a bijection, if it has an \index{inverse}\emph{inverse};
-that is, a map $g\:\mathcal{Y}\to\mathcal{X}$
-such that 
-$g(f(A))\z=A$ for any $A\in\mathcal{X}$
-and
-$f(g(B))\z=B$ for any $B\in\mathcal{Y}$. 
+Вспомним, что отоброжения $f\:\mathcal{X}\to\mathcal{Y}$
+является \index{bijection}\emph{биективным},
+если между двумя множествами можно установить взаимно однозначное соответствие.
+Аналогично, $f\:\mathcal{X}\to\mathcal{Y}$ является биекцией, если существует \index{inverse}\emph{обратное};
+отоброжение $g\:\mathcal{Y}\to\mathcal{X}$,
+такое, что
+$g(f(A))\z=A$ для любых $A\in\mathcal{X}$
+и
+$f(g(B))\z=B$ для любых $B\in\mathcal{Y}$. 
 
-\begin{thm}{Definition}\label{def:isom}
-Let $\mathcal X$ and $\mathcal Y$ be two metric spaces and $d_{\mathcal X}$, $d_{\mathcal Y}$ be their metrics. 
-A map 
+\begin{thm}{Определения}\label{def:isom}
+Пусть $\mathcal X$ и $\mathcal Y$ — метрические пространства и $d_{\mathcal X}$, $d_{\mathcal Y}$ их метрики. 
+Отоброжение
 $$f\:\mathcal X \z\to \mathcal Y$$ 
-is
-called \index{distance-preserving map}\emph{distance-preserving} if 
+называется \index{distance-preserving map}\emph{сохраняющим расстояние}, если 
 $$d_{\mathcal Y}(f(A), f(B))
  = d_{\mathcal X}(A,B)$$
-for any $A,B\in {\mathcal X}$.
+для любых $A,B\in {\mathcal X}$.
 
-A bijective distance-preserving map is called an \index{isometry}\emph{isometry}. 
+Биективное отоброжение, сохраняющие расстояние, называется \index{isometry}\emph{изометрией}. 
 
-Two metric spaces are called
-\emph{isometric} if there exists an isometry from one to the other.
+Два метрических пространства называются
+\emph{изометричными}, если между ними существует изометрией из одного пространства в другое.
 
-The isometry from a metric space to itself 
-is also called a \index{motion}\emph{motion} of the space.
+Изометрия из метрического пространства в себя же
+называется \index{motion}\emph{движением} на плоскости.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:dist-preserv=>injective}
-Show that any distance-preserving map is \index{injective map}\emph{injective};
-that is, if $f\:\mathcal X\to\mathcal Y$ is a distance-preserving map, 
-then $f(A)\ne f(B)$ for any pair of distinct points $A, B\in \mathcal X$.
+\begin{thm}{Упражнение}\label{ex:dist-preserv=>injective}
+Покажите, что любое отоброжение, сохраняющие расстояние \index{injective map}\emph{инъективно};
+то есть, если $f\:\mathcal X\to\mathcal Y$ является отоброженеим, сохраняющим расстояни, 
+тогда $f(A)\ne f(B)$ для любых празличных пар точек $A, B\in \mathcal X$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:motion-of-R}
