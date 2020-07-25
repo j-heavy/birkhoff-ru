@@ -2,61 +2,58 @@
 \addcontentsline{toc}{chapter}{Introduction}
 \addtocontents{toc}{\protect\begin{quote}}
 
-This book is meant to be 
-rigorous, 
-conservative, 
-elementary and
-minimalist.
-At the same time it includes about the maximum what students can absorb in one semester.
+Эта книга должна быть
+строгой, 
+консервативной, 
+элементраной и
+минималистичной.
+В то же время, она включает в себя примерно максимум того, что студенты могут усвоить за один семестр.
 
-Approximately one-third of the material used to be covered in high school, but not any more.
+Примерно одна треть материала изучалась в старшей школе, но теперь это не так.
 
-The present book is based 
-on the courses given by the author 
-at the Pennsylvania State University
-as an introduction to the foundations of geometry.
-The lectures were oriented to sophomore and senior university students.  
-These students already had a calculus course.
-In particular, they are familiar with the real numbers and continuity.
-It makes it possible to cover the material faster 
-and  in a more rigorous way
-than it could be done in high school.
+Настоящая книга основана 
+на курсе, прочитанном автором
+в университете Пенсильвании
+как введение в основания геометрии.
+Лекции были ориентированы на второкурсников и студентов старших курсов университета.
+У этих студентов уже был курс математического анализа.
+В частности, они знакомы с действительными числами и понятием непрерывности.
+Это позволяет проходить материал гораздо быстрее и строже, нежели в классах старшей школы.
 
-\section*{Prerequisite}
+\section*{Необходимые знания}
 \addtocontents{toc}{Prerequisite.}
 
-The students should be familiar 
-with the following topics:
+Студент должен быть знаком со следующими разделами математики:
 \begin{itemize}
-\item Elementary set theory: 
+\item Наивная (Канторова) теория множеств: 
 $\in$,
 $\cup$, 
 $\cap$,
 $\backslash$,
 $\subset$,~$\times$.
-\item Real numbers: intervals, inequalities, algebraic identities.
-\item Limits, continuous functions, and the intermediate value theorem.
-\item Standard functions: 
-absolute value, 
-natural logarithm,
-exponential function. 
-Occasionally, trigonometric functions  are used, 
-but these parts can be ignored.
-\item  Chapter~\ref{chap:trans} uses basic vector algebra.
-\item To read Chapter~\ref{chap:sphere}, it is better to have some previous experience with the {}\emph{scalar product}, also known as {}\emph{dot product}.
-\item To read Chapter~\ref{chap:complex}, it is better to have some previous experience with complex numbers.
+\item Действительные числа: интервалы, неравенства, алгебраические тождества.
+\item Предел, непрерывные функции и теорема о промежуточном значении (Больцано — Коши).
+\item Стандартные функции: 
+абсооютная величина (модуль), 
+натуральный логарифм,
+экспоненциальная функция. 
+Иногда будут встречать тригонометрические функции, 
+но эти части можно пропустить.
+\item  В главе~\ref{chap:trans} встречаются основы линейной алгебры.
+\item Для~\ref{chap:sphere}, будет плюсом умение работать со {}\emph{скалярным произвидением}.
+\item Для~\ref{chap:complex}, также не будет лишним понимание комплексных чисел.
 \end{itemize} 
 
-\section*{Overview}
+\section*{Структура книги}
 \addtocontents{toc}{Overview.}
 
-We use the so called {}\emph{metric approach} introduced by Birkhoff.
-It means that we define the Euclidean plane as a {}\emph{metric space} which satisfies a list of properties ({}\emph{axioms}).
-This way we minimize the tedious parts
-which are unavoidable in the more classical Hilbert's approach.
-At the same time the students have a chance to learn basic geometry of metric spaces.
+Мы будем использовать {}\emph{метрический подход} предложенный Биркгофым.
+Это означает, что мы определяем Евклидово пространство как {}\emph{метрическое}, которое имеет определённые свойства ({}\emph{аксиомы}).
+Таким образом, мы минимизируем утомительные части,
+которые являются неизбежными в подходе Гильберта.
+В то же время, студенты имеют возможность изучить основы метрических пространств.
 
-Here is a dependency graph of the chapters.
+Иллюстрация структуры:
 
 \begin{figure}[h!]
 \centering
@@ -111,57 +108,57 @@ Here is a dependency graph of the chapters.
 \end{figure}
 
 
-In (\ref{chap:metr}) we give all the definitions necessary to formulate the axioms;
-it includes metric space, 
-lines, 
-angle measure, 
-continuous maps and congruent triangles.
+В (\ref{chap:metr}) мы даем все определения, необходимые для формулирования аксиом:
+понятие метрического пространства, 
+линии, 
+угла, 
+непрерывного отоброжения и конгруэтных треугольников.
 
 
-Further we do Euclidean geometry:
-(\ref{chap:axioms}) Axioms and immediate corollaries;
-(\ref{chap:half-planes}) Half-planes and continuity;
-(\ref{chap:cong}) Congruent triangles;
-(\ref{chap:perp}) Circles, motions, perpendicular lines;
-(\ref{chap:parallel}) Similar triangles and (\ref{chap:angle-sum}) Parallel lines  
---- these are the first two chapters where we use Axiom~\ref{def:birkhoff-axioms:4}, an equivalent of Euclid's parallel postulate.
-In (\ref{chap:triangle}) we give the most classical theorem of triangle geometry;
-this chapter is included mainly as an illustration.
+Далее мы переходим к Евклидовой геометрии:
+(\ref{chap:axioms}) Аксиомы и следствия из них;
+(\ref{chap:half-planes}) Полуинтервалы и непрерывность;
+(\ref{chap:cong}) Конгруэнтные треугольники;
+(\ref{chap:perp}) Окружности, движение, перпендикулярные линии;
+(\ref{chap:parallel}) Подобные треугольники и (\ref{chap:angle-sum}) Параллельные прямые  
+--- это первые две главы, где мы используем аксиомы ~\ref{def:birkhoff-axioms:4}, эквивалентные пятому постулату Евклида.
+В (\ref{chap:triangle}) мы даём самые классические теоремы о треугольниказ;
+эта глава включена, главным образом, в качестве иллюстрации.
 
 
-In the following two chapters we discuss geometry of circles on the Euclidean plane:
-(\ref{chap:inscribed-angle}) Inscribed angles; (\ref{chap:inversion}) Inversion.
-It  will be used to construct the model of the hyperbolic plane.
+В следующих двух главах мы обсудим геометрию окружностей:
+(\ref{chap:inscribed-angle}) Вписанные углы; (\ref{chap:inversion}) Инверсии.
+Это будет использовано для построения модели гиперболической геометрии.
 
-Further 
-we discuss non-Euclidean geometry:
+В дальнейшем, 
+мы обсудим не-Евклидову геометрию:
 (\ref{chap:non-euclid})
-Neutral geometry --- geometry without the parallel postulate;
+Нейтральня геометрия --- геометрия без аксиомы параллельности;
 (\ref{chap:poincare})
-Conformal disc model ---
-this is a construction of the hyperbolic plane,
-an example of a neutral plane which is not Euclidean.
-In (\ref{chap:h-plane}) we discuss geometry of the constructed hyperbolic plane --- this is the highest point in the book.
+Модель конформного диска ---
+это построение гиперболической геометрии,
+пример нейтральной плоскости, не являющейся Евклидовой.
+В (\ref{chap:h-plane}) мы обсудим гиперболическую --- конечная точка книги.
 
-In the reamining chapters we discuss some additional topics:
-(\ref{chap:trans}) Affine geometry;
-(\ref{chap:proj}) Projective geometry;
-(\ref{chap:sphere}) Spherical geometry;
-(\ref{chap:klein}) Projective model of the hyperbolic plane;
-(\ref{chap:complex}) Complex coordinates;
-(\ref{chap:car}) Geometric constructions;
-(\ref{chap:area}) Area.
-The proofs in these chapters are not completely rigorous.
+В оставшихся главах мы обсудим дополнительные разделы:
+(\ref{chap:trans}) Аффинная геометрия;
+(\ref{chap:proj}) Проективная геометрия;
+(\ref{chap:sphere}) Сферическая геометрия;
+(\ref{chap:klein}) Проективная модель гиперболического пространства;
+(\ref{chap:complex}) Комплексные координаты;
+(\ref{chap:car}) Геометрические конструкции;
+(\ref{chap:area}) Площадь.
+Доказательства в этих главах недостаточны строги.
 
-We encourage to use the visual assignments at the author's website.
+Мы рекомендуем использовать визуальные задания на сайте автора.
 
-\section*{Disclaimer}
+\section*{Дисклеймер}
 
-It is  impossible to find the original reference to most of the theorems discussed here, so I do not even try to.
-Most of the proofs discussed in the book 
-already appeared in the Euclid's Elements.
+Невозможно найти оригинальную ссылку на большинство обсуждаемых здесь теорем, поэтому я даже не пытаюсь это сделать.
+Большинство доказательств, обсуждаемых в книге,
+уже были представлены в Началах Евклида.
 
-\section*{Recommended books}
+\section*{Рекомендуемая литература}
 
 \begin{itemize}
 \item Byrne's Euclid \cite{byrne} --- a coloured version of the first six books of Euclid's Elements edited by Oliver Byrne. 
