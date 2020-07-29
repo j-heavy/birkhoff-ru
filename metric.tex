@@ -11,8 +11,8 @@
 Как только мы определились с системой аксиом, утверждение считается истинным, если оно следует из аксиом, и ничто другое таковым считаться не может.
 
 Первые аксиомы были не совсем строгими.
-Например, Евклид поисывал {}\emph{линию} как {}\emph{длину без ширины},
-а {}\emph{прямую линию} как линию, {}\emph{все точки которой ровно лежат на себе}.
+Например, Евклид поисывал {}\emph{отрезов} как {}\emph{длину без ширины},
+а {}\emph{прямой отрезок} как тот, {}\emph{все точки которой ровно лежат на себе}.
 С другой стороны,
 эти формулировки были достаточно ясны,
 чтобы один математик мог понять другого.
@@ -195,75 +195,75 @@ $$d_{\mathcal Y}(f(A), f(B))
 тогда $f(A)\ne f(B)$ для любых празличных пар точек $A, B\in \mathcal X$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:motion-of-R}
-Show that if $f\:\mathbb{R}\to\mathbb{R}$ is a motion of the real line,
-then either (a)
-$f(x)=f(0)+x$ for any $x\in \mathbb{R}$, 
-or (b)
-$f(x)=f(0)-x$ for any $x\in \mathbb{R}$. 
+\begin{thm}{Упражнение}\label{ex:motion-of-R}
+Покажите, что, если $f\:\mathbb{R}\to\mathbb{R}$ описывает движение на вещественной прямой,
+тогда (a)
+$f(x)=f(0)+x$ для любых $x\in \mathbb{R}$, 
+или (b)
+$f(x)=f(0)-x$ для любых $x\in \mathbb{R}$. 
 
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:d_1=d_infty}
-Prove that $(\mathbb{R}^2,d_1)$ is isometric to $(\mathbb{R}^2,d_\infty)$.
+\begin{thm}{Упражнение}\label{ex:d_1=d_infty}
+Докажите, что $(\mathbb{R}^2,d_1)$ изометрично $(\mathbb{R}^2,d_\infty)$.
 \end{thm}
 
-\begin{thm}{Advanced exercise}\label{ad-ex:motions of Manhattan plane}
-Describe all the motions of the Manhattan plane, defined on page~\pageref{Manhattan plane}.
+\begin{thm}{Сложное упражнение}\label{ad-ex:motions of Manhattan plane}
+Опишите все движения на Манхэттенском пространстве, описанные на странице ~\pageref{Manhattan plane}.
 \end{thm}
 
-If $\mathcal X$ is a metric space and $\mathcal Y$ is a subset of $\mathcal X$,
-then a metric on $\mathcal Y$ can be obtained by restricting the metric from~$\mathcal X$. 
-In other words, 
-the distance between two points of $\mathcal Y$ is defined to be the distance between these points in $\mathcal X$.
-This way any subset of a metric space can be also considered as a metric space. 
+Если $\mathcal X$ — метрическое пространство и $\mathcal Y$ подмножество $\mathcal X$,
+тогда метрика на $\mathcal Y$ можно получить, ограничив метрику от~$\mathcal X$. 
+Другими слова, 
+расстояние между двумя точками на $\mathcal Y$ определяется как расстояние между этими же точками в $\mathcal X$.
+Таким образом, любое подмножество метрического пространства также может рассматриваться как метрическое пространство. 
 
-\begin{thm}{Definition}\label{def:line}
-A subset $\ell$ of metric space is called a \index{line}\emph{line}, if it is isometric to the real line.
+\begin{thm}{Определение}\label{def:line}
+Подмножество $\ell$ метрического пространства называется \index{line}\emph{отрезком}, если является изометрией на вещественную прямую.
 \end{thm}
 
-A triple of points that lie on one line is called \index{collinear points}\emph{collinear}.
-Note that if $A$, $B$, and  $C$ are  collinear, $AC\ge AB$ and $AC\ge BC$, then $AC= AB+BC$.
+Тройка точек, лежащих на одной прямой, называется \index{collinear points}\emph{коллинеарной}.
+Обратите внимание, что если $A$, $B$, и  $C$ коллинеарны, $AC\ge AB$ и $AC\ge BC$, то $AC= AB+BC$.
 
-Some metric spaces have no lines, for example discrete metrics.
-The picture shows examples of lines on the Manhattan plane $(\mathbb{R}^2,d_1)$. 
+Некоторые метрические пространства не имеют отрезков, например, дискретные метрики.
+Иллюстрация Манхэттенского пространства $(\mathbb{R}^2,d_1)$. 
 \begin{figure}[h!]
 \centering
 \includegraphics{mppics/pic-2}
 \end{figure}
 
 \begin{thm}{Exercise}\label{ex:y=|x|}
-Consider the graph $y=|x|$ in $\mathbb{R}^2$.
-In which of the following spaces 
+Рассмотрим функцию $y=|x|$ на $\mathbb{R}^2$.
+В каком из следующих пространств 
 (a) $(\mathbb{R}^2,d_1)$, 
 (b) $(\mathbb{R}^2,d_2)$, 
 (c) $(\mathbb{R}^2,d_\infty)$ 
-does it form a line? 
-Why?
+она образует отрезок? 
+Почему?
 \end{thm}
 
-\section*{Half-lines and segments}
+\section*{Полуинтервалы и сегменты}
 \addtocontents{toc}{Half-lines and segments.}
 
-Assume there is a line $\ell$ passing thru
-two distinct points $P$ and $Q$.
-In this case we might denote $\ell$ as $(PQ)$.
-There might be more than one line thru $P$ and $Q$,
-but if we write \index{60@$(PQ)$, $[PQ)$, $[PQ]$}$(PQ)$ we assume that we made a choice of such line. 
+Предположим, что существует отрезок $\ell$, 
+проходящий через две различные точки $P$ и $Q$.
+В этом случае мы можем обозначить $\ell$ как $(PQ)$.
+Там может быть больше, чем одна линия через $P$ и $Q$,
+но если мы напишем \index{60@$(PQ)$, $[PQ)$, $[PQ]$}$(PQ)$ будем считать, что мы сделали выбор именно такой линии. 
 
-\begin{thm}{Exercise}\label{ex:2mid}
-How many points $M$ are there on the line $(A B)$ for which we have
+\begin{thm}{Упражнение}\label{ex:2mid}
+Сколько точек $M$ на отрезке $(A B)$, для которых:
 \begin{enumerate}[(a)]
 \item $AM= MB$ ?
 \item $AM= 2\cdot MB$ ?
 \end{enumerate}
 \end{thm}
 
-Let $[P Q)$ denotes the \index{half-line}\emph{half-line}
-that starts at $P$ and contains~$Q$. 
-Formally speaking, $[P Q)$ is a subset of $(P Q)$ which corresponds to $[0,\infty)$ under an isometry $f\:(P Q)\to \mathbb{R}$ such that $f(P)=0$ and $f(Q)>0$.
+Пусть $[P Q)$ обозначает \index{half-line}\emph{полуинтервал},
+который начинается в $P$ и содержит ~$Q$. 
+Более формально, $[P Q)$ подмножество $(P Q)$, которое соответствует $[0,\infty)$ изометрии $f\:(P Q)\to \mathbb{R}$, такое что $f(P)=0$ и $f(Q)>0$.
 
-The subset of line $(P Q)$ between $P$ and $Q$ is called the \index{segment}\emph{segment} between $P$ and $Q$ and denoted by~$[P Q]$.
+Подмножество отрезка $(P Q)$ между $P$ и $Q$ мы называем \index{segment}\emph{bynt} between $P$ and $Q$ and denoted by~$[P Q]$.
 Formally, the segment can be defined as the intersection of two half-lines: $[P Q]=[P Q)\cap[Q P)$.
 
 \begin{thm}{Exercise}\label{ex:trig==}
